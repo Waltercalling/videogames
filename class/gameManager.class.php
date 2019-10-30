@@ -1,6 +1,6 @@
 <?php
 
-Class gameManager{
+Class GameManager{
 
     private $db;
 
@@ -21,22 +21,28 @@ Class gameManager{
       
     }
 
-    public function __construct($db){
-        $db = $this->db; // récupération du connecteur à la base de données
-        $db->closeCursor(); // fermeture de l'accès à la base de données
-        unset ($this); // destruction de l'objet gameManager appelant
+    // public function __destruct($db){
+    //     $db = $this->db; // récupération du connecteur à la base de données
+    //     $db->closeCursor(); // fermeture de l'accès à la base de données
+    //     unset ($this); // destruction de l'objet gameManager appelant
         
         
-    }
+    // }
 
     // METHODES
 
 
 
-    public function addGame($game){
+    public function addGame(Game $game){
     // on récupère le connecteur à la base de donnée
         $db = $this->db;
-        $tabvar = $game->tabVars();
+        //VAR_DUMP($db);
+        $tabvar = $game->getTabListGame();
+        // echo '<pre>';
+        // print_r ($tabvar);
+        // echo '</pre>';
+
+        
          $title = $game->getTitle();
          $description = $game->getDescription();
          $pegi = $game->getPegi();
@@ -44,7 +50,26 @@ Class gameManager{
          $id_category = $game->getId_category();
          $id_studio = $game->getId_studio();
 
+         $sql = "INSERT INTO game (game.title, game.description, game.pegi, game.link, game.id_category, game.id_studio) VALUES ('".$title."','".$description."','".$pegi."','".$link."',".$id_category.",".$id_studio.")  
+         
+         ";
+         //echo $sql;
+        //  $sql = "INSERT INTO jvcom (title, description, pegi, link, id_category, id_studio) VALUES (:title,:description,:pegi,:link,:id_category,:id_studio)  ";
+         
+         
+        //  $sql->bindValue(':title', $title);
+        //  $sql->bindValue(':description', $description);
+        //  $sql->bindValue(':pegi', $pegi);
+        //  $sql->bindValue(':link', $link);
+        //  $sql->bindValue(':id_category', $id_category);
+        //  $sql->bindValue(':id_studio', $id_studio);
+        //  echo $sql;
 
+   
+          if (!empty($db)){
+            $req = $db->prepare($sql);
+            $req->execute(); 
+          }
 
     }
 
@@ -62,9 +87,22 @@ Class gameManager{
 
 
 
-    public function getListGame($game){
+    public function getListGame(){
+        $db = $this->db;
+        $sql = "SELECT game.id_game,game.title, game.description, game.pegi, game.link AS gamelink, game.id_category, category.type, game.id_studio,  studio.name, studio.link AS studiolink FROM game
+                INNER JOIN category ON game.id_category = category.id_category
+                INNER JOIN studio ON game.id_studio = studio.id_studio";
+        // echo "<br/>".$sql;
+
+        if (!empty($db)){
+            $req = $db->prepare($sql);
+            $req->execute();
+                      
+            $games = $req->fetchAll(PDO::FETCH_ASSOC); 
+            return $games;
+        }
+
         
-        return $game->getTabListGame();
         
 
     }
@@ -75,5 +113,5 @@ Class gameManager{
         
 
     }
-
+}
     

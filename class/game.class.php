@@ -1,5 +1,5 @@
 <?php
-class GAME{
+class Game{
 
     private $id_game;
     private $title;         // le titre du jeu
@@ -107,10 +107,10 @@ class GAME{
         return $this; // pour pouvoir chainer les méthodes
     }
 
-    public function __destruct(){
-        //Destruction de l'objet
-        unset ($this);
-    }
+    // public function __destruct(){
+    //     //Destruction de l'objet
+    //     unset ($this);
+    // }
 
     // Pour renvoyer les données sous forme de tableau
     public function getTabListGame(){ 
