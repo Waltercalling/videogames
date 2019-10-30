@@ -28,8 +28,8 @@
 	          Support
 	        </a>
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">Ajout</a>
-	          <a class="dropdown-item" href="#">Liste</a>
+	          <a class="dropdown-item" href="deviceadd.php">Ajout</a>
+	          <a class="dropdown-item" href="device.php">Liste</a>
 	        </div>
 	        
 	      </li>
