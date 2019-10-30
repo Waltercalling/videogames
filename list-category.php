@@ -33,8 +33,8 @@
 				<td class="p-3"><?= $value['type']; ?></td>
 				<td class="text-right align-middle">
 					<div class="d-flex flex-lg-row justify-content-lg-around">
-						<div><a href="update-manufacturer.php?id=<?= $manufacturer['id'];?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
-						<div><a class="confirmation" href="delete-manufacturer.php?id=<?= $manufacturer['id'];?>"><i class="fas fa-trash-alt" title="Supprimer"></i></a></div>
+						<div><a href="update-manufacturer.php?id=<?= $value['id_category'];?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
+						<div><a class="confirmation" href="delete-manufacturer.php?id=<?= $value['id_category'];?>"><i class="fas fa-trash-alt" title="Supprimer"></i></a></div>
 					</div>
 				</td>
 			</tr>
