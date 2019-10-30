@@ -38,7 +38,7 @@ class Studio{
         }
         return $this;
     }
-    private setId_studio($id_studio){
+    private function setId_studio($id_studio){
         $this->id_studio = $id_studio;
     }
 
