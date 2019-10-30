@@ -16,6 +16,7 @@
                 $studio = new Studio(['name'=>$_POST['studio'], 'link'=>$_POST['link']]);
                 $manager->addStudio($studio);
                 echo "<h1>Studio bien ajouté</h1>";
+
             }else{
                 echo "<h1>Erreur lors du formulaire</h1>";
             }
@@ -41,3 +42,4 @@
             
             </div>
 </body>
+<?php require_once 'inc/footer.php'; ?>

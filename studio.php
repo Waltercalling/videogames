@@ -26,7 +26,7 @@
                     <th scope="col">Nom</th>
                     <th scope="col">Lien</th>
                     <th scope="col">Supprimer</th>
-                    <th scope="col">Ajouter</th>
+                    <th scope="col">Modifier</th>
                 
                 </tr>       
         </thead>
@@ -38,8 +38,8 @@
             <tr>
                     <td><?= $value->getName(); ?></td>
                     <td><?= $value->getLink(); ?></td>
-                    <td><button class='btn btn-success'>Supprimer</button></td>
-                    <td><button class='btn btn-success'>Ajouter</button></td>
+                    <td><a class="btn btn-danger" href="deleteStudio.php">Supprimer</a></td>
+                    <td><a class="btn btn-warning" href="upgradeStudio.php">Modifier</a></td>
             </tr>
                 <?php endforeach;?>
             
@@ -47,3 +47,4 @@
         </tbody>
     </table>
 </body>
+<?php require_once 'inc/footer.php'; ?>
