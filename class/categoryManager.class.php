@@ -15,7 +15,7 @@ public function addCategory(Category $category) {
 	  $add_category->bindValue(':type', $category->getType(), PDO::PARAM_STR);
 	  // Execute insert category
 	  $add_category->execute();
-	  // Close cursor of the insert category
+	  // Close cursor after category insert
 	  $add_category->closeCursor();
 	  echo '<p><strong><u>Catégorie bien ajoutée !!</u></strong></p>';
 	}

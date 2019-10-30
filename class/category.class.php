@@ -16,7 +16,7 @@ class Category {
 	public function getId_category(){ 
 		return $this->id_category;
 	}
-	public function setId_category(){
+	private function setId_category($id_category){
 		$this->id_category = $id_category;
 	}
 	// Get and Set ID Type

@@ -16,7 +16,7 @@
 	<h1 class="text-center my-3">Liste des catégories</h1>
 	<?php $manager = new categoryManager($bdd); 
           $listCategory = $manager->listCategory();
-          // $categorydel = $manager->getObjCategory();
+          $categorydel = $manager->getObjCategory();
 
           // echo'<pre>';
           // var_dump($categorydel);
