@@ -30,6 +30,19 @@ public function deleteCategory(Category $category){
 	return $this;
 }
 
+// //Fonction Getid
+// public function getId_category(){
+// 	return $this->db->query('SELECT category.id_category FROM category WHERE id ='.$category->getId_category())->fetch(PDO::FETCH_ASSOC);
+
+// }
+
+// public function getId($id){
+//     $id = (int) $id;
+//     $q = $this->db->query('SELECT id_category FROM category WHERE id = '. $id);
+//     $catId = $q->fetch(PDO::FETCH_ASSOC);
+//     return ($catId); 
+//     }
+
 public function getObjCategory(){
     $categoryObjet = [];
     $category = $this->db->query('SELECT category.id_category, category.type FROM category');

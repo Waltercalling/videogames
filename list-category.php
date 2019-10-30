@@ -16,10 +16,11 @@
 	<h1 class="text-center my-3">Liste des catégories</h1>
 	<?php $manager = new categoryManager($bdd); 
           $listCategory = $manager->listCategory();
+          // $idCat = $manager->getId_category();
           $categorydel = $manager->getObjCategory();
-
-          // echo'<pre>';
-          // var_dump($categorydel);
+		  // $idcat = $manager->getId_category($listCategory);
+          echo'<pre>';
+         var_dump($categorydel );
 	?>
 
 <section class="border border-dark w-50 m-auto rounded shadow">
