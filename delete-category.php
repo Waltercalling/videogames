@@ -8,4 +8,5 @@ include_once("inc/connect.php");
 // echo '<pre>';
 	// var_dump($idCat);
 
-	$manager->deleteCategory($idCat);
+	$manager->deleteCategory($categorydel[0]);
+	header('Location:list-category.php');

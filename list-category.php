@@ -19,8 +19,8 @@
           // $idCat = $manager->getId_category();
           $categorydel = $manager->getObjCategory();
 		  // $idcat = $manager->getId_category($listCategory);
-          echo'<pre>';
-         var_dump($categorydel );
+         //  echo'<pre>';
+         // var_dump($categorydel);
 	?>
 
 <section class="border border-dark w-50 m-auto rounded shadow">
