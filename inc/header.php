@@ -10,9 +10,7 @@
 	      <li class="nav-item active">
 	        <a class="nav-link" href="#">accueil <span class="sr-only">(current)</span></a>
 	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">Link</a>
-	      </li>
+	      <!-- Menu Category -->
 	      <li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	          Catégories
@@ -21,7 +19,7 @@
 	          <a class="dropdown-item" href="#">Ajout</a>
 	          <a class="dropdown-item" href="#">Liste</a>
 	        </div>
-
+	        <!-- Menu Support -->
 	      </li>
 	       <li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
