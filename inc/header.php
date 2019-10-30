@@ -16,7 +16,7 @@
 	          Catégories
 	        </a>
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">Ajout</a>
+	          <a class="dropdown-item" href="add-category.php">Ajout</a>
 	          <a class="dropdown-item" href="list-category.php">Liste</a>
 	        </div>
 	        <!-- Menu Support -->

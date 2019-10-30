@@ -17,8 +17,7 @@ public function add(Category $category) {
 	  $add_category->execute();
 	  // Close cursor of the insert category
 	  $add_category->closeCursor();
-	  echo '<p><strong><u>!! Categorie bien ajoutée !!</u></strong></p>';
+	  echo '<p><strong><u>!! Catégorie bien ajoutée !!</u></strong></p>';
 	  return $this;
 	}
-
 }
