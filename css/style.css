@@ -1,3 +1,19 @@
 body{
 	background-color: #efefef;
 }
+
+.fa-edit{
+	color: green;
+	font-size: 1.3em;
+	padding: 0px 10px 0px 10px; 
+}
+.fa-trash-alt{
+	color: red;
+	font-size: 1.3em;
+	padding: 0px 10px 0px 10px; 
+}
+.fa-headset{
+	color: green;
+	font-size: 1.5em;
+
+}
