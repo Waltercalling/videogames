@@ -9,7 +9,7 @@ class categoryManager{
     $this->db = $db;
   }
 
-public function add(Category $category) {
+public function addCategory(Category $category) {
 	  // Prepare category insert
 	  $add_category = $this->db->prepare('INSERT INTO category(type) VALUES(:type)');
 	  $add_category->bindValue(':type', $category->getType(), PDO::PARAM_STR);
