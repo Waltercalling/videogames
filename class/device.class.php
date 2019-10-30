@@ -16,6 +16,8 @@ class Device {
 		}
 	}
 
+
+	
 	public function getId_device(){ return $this->id_device;}
 	public function getNom(){ return $this->name;}
 
