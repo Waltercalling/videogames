@@ -16,7 +16,7 @@ class Category {
 	public function getId_category(){ 
 		return $this->id_category;
 	}
-	public function setId_category(){
+	private function setId_category(){
 		$this->id_category = $id_category;
 	}
 
@@ -25,7 +25,7 @@ class Category {
 		return $this->type;
 	}
 	public function setType($type){
-		if(is_string($manufacturer) && strlen($manufacturer)>=1 && strlen($manufacturer)<= 90){
+		if(is_string($type) && strlen($type)>=1 && strlen($type)<= 90){
 			$this->type = $type;
 		}else{
 			echo'Type invalide';
