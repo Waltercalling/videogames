@@ -7,7 +7,6 @@
 		
 		<!-- Favicon must be create -->
 		<link rel="icon" href="media/favicon.ico" />
-		
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/normalize.css">
 		<link rel="stylesheet" href="css/bootstrap.css">

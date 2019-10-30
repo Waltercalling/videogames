@@ -2,7 +2,7 @@
 <html lang="fr">
 <!-- Head load -->
 <?php include("inc/head.php"); ?>
-<title>Guitar Shop</title>
+<title>Jeux Vidéos</title>
 </head>
 <!-- Database connexion -->
 <?php include_once("inc/connect.php");?>
