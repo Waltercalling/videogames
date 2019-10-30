@@ -1,3 +1,5 @@
+<?php spl_autoload_register(function($class){require_once'class/'.$class.'.class.php'; }); ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <!-- Head load -->
@@ -15,6 +17,13 @@
 	<h1 class="text-center my-3">Ajouter une catégorie</h1>
 
 <section class="w-50 m-auto">
+	<?php
+	if (isset($_POST['catName'])){
+		$manager = new categoryManager($bdd);
+		$category = new Category (['type' => $_POST['catName']]);
+		$manager->addCategory($category);
+	}
+	?>
 	<form class="border border-dark rounded bg-light p-5" action="" method="POST">
 		
 		<label for="catName">Nom de la catégorie</label>
