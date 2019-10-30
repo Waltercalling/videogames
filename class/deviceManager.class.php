@@ -42,14 +42,22 @@
 		$this->_db->exec('DELETE FROM device WHERE id_device='.$device->getId_device());
 		}
 
-		public function update(Device $device){
+/*		public function update(Device $device){
 		$new_device = $this->_db->prepare('UPDATE device SET id_device = :id_device, name = :name, WHERE id_device ='.$device->getId_device());
 		$new_device->bindValue(':id_device', $device->getId_device(), PDO::PARAM_INT);
 		$new_device->bindValue(':name', $device->getName(), PDO::PARAM_STR);
 	
-		}
+		}*/
 
 		public function delById($id){
 		$this->_db->exec('DELETE FROM device WHERE id_device ='.$id); 
+		}
+
+			public function updateById($id){
+		$new_device = $this->_db->prepare('UPDATE device SET /*id_device = :id_device,*/ name = :name, WHERE id_device ='.$id);
+/*		$new_device->bindValue(':id_device', $device->getId_device(), PDO::PARAM_INT);
+*/		$new_device->bindValue(':name', $id->getName(), PDO::PARAM_STR);
+		$new_device->execute();
+	
 		}
 	}
