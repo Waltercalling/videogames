@@ -1,3 +1,11 @@
 jQuery(document).ready(function($) {
-	    console.log("OK");
+	//Check confirmation click for delete button
+	$('.confirmation').on('click', function () {
+		return confirm ('Voulez-vous vraiment supprimer ?');
+	});
+
+	//Check confirmation click for cancel button
+	$('.cancel').on('click', function () {
+		return confirm ('Voulez-vous vraiment quitter sans sauvegarder ?');
+	});
 });

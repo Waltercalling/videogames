@@ -21,7 +21,9 @@
           // echo'<pre>';
           // var_dump($categorydel);
 	?>
-<table class="w-50 m-auto table">
+
+<section class="border border-dark w-50 m-auto rounded shadow-sm">
+	<table class="m-auto table table-striped table-hover">
 		<thead class="thead-dark text-white">
 			<th scope="col" class="p-3">Id</th>
 			<th scope="col" class="p-3 w-100">Catégorie</th>
@@ -36,7 +38,7 @@
 				<td class="p-3"><?= $value['type']; ?></td>
 				<td class="text-right align-middle">
 					<div class="d-flex flex-lg-row justify-content-lg-around">
-						<div><a href="update-manufacturer.php?id=<?= $value['id_category'];?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
+						<div><a class="cancel" href="update-category.php?id=<?= $value['id_category'];?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
 						<div><a href="delete-category.php?id=<?= $value['id_category'];?>"><i class="fas fa-trash-alt" title="Supprimer"></i></a></div>
 					</div>
 				</td>
@@ -44,6 +46,10 @@
 			<?php endforeach; ?>
 		</tbody>
 	</table>
+<section>
+
+
+
 	<!-- Footer -->
 	<?php include("inc/footer.php"); ?>
 
