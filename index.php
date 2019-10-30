@@ -14,8 +14,6 @@
 
 	<h1></h1>
 
-	<!-- Start Informations messages -->
-		<?php include_once("inc/messages.php") ?>
 
 	<!-- Footer -->
 	<?php include("inc/footer.php"); ?>
