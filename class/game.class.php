@@ -14,10 +14,10 @@ class GAME{
         return $this->id_game;
     }
 
-    public function setId_game($new_id_game){
+    private function setId_game($new_id_game){
         
         $this->id_game = $new_id_game;
-        return $this;
+        
     }
 
 
@@ -29,7 +29,7 @@ class GAME{
     public function setTitle($new_title){
         
         $this->title = $new_title;
-        return $this;
+        return $this; // pour pouvoir chainer les méthodes
     }
 
 
@@ -41,7 +41,7 @@ class GAME{
     public function setDescription($new_description){
         
         $this->description = $new_description;
-        return $this;
+        return $this; // pour pouvoir chainer les méthodes
     }
 
     // get et set pegi
@@ -52,7 +52,7 @@ class GAME{
     public function setPegi($new_pegi){
         
         $this->pegi = $new_pegi;
-        return $this;
+        return $this; // pour pouvoir chainer les méthodes
     }
 
     // get et set link
@@ -63,18 +63,18 @@ class GAME{
     public function setLink($new_link){
         
         $this->link = $new_link;
-        return $this;
+        return $this; // pour pouvoir chainer les méthodes
     }
 
-    // get et set id_categoy
-    public function getId_categoy(){
-        return $this->id_categoy;
+    // get et set id_category
+    public function getId_category(){
+        return $this->id_category;
     }
 
-    public function setId_categoy($new_id_categoy){
+    private function setId_category($new_id_category){
         
-        $this->id_categoy = $new_id_categoy;
-        return $this;
+        $this->id_category = $new_id_category;
+        return $this; // pour pouvoir chainer les méthodes
     }
 
     // get et set id_studio
@@ -82,14 +82,40 @@ class GAME{
         return $this->id_studio;
     }
 
-    public function setId_studio($new_id_studio){
+    private function setId_studio($new_id_studio){
         
         $this->id_studio = $new_id_studio;
-        return $this;
+        return $this; // pour pouvoir chainer les méthodes
     }
 
 
     // FIN DES GET ET SET
 
-}
+
+
+
+    // CONSTRUCTEUR DESTRUCTEUR ET AUTRES METHODES
+    
+    // Constructeur automatisé
+    public function __construct(array $donnees){
+        foreach($donnees as $key => $value){
+            $method= 'set'.ucfirst($key);
+            if (method_exists($this,$method)){
+                $this->$method($value);
+            }
+        }
+        return $this; // pour pouvoir chainer les méthodes
+    }
+
+    public function __destruct(){
+        //Destruction de l'objet
+        unset ($this);
+    }
+
+    // Pour renvoyer les données sous forme de tableau
+    public function tabVars(){ 
+        return get_object_vars($this);
+    }
+
+} // FIN DE CLASSE
 
