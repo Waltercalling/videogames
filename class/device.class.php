@@ -26,11 +26,12 @@ class Device {
 		return $this;
 	}
 	public function setName($name){
-		if (is_string($modele) && strlen($modele)>=1 && strlen($modele)<=100){		
+		if (is_string($name) && strlen($name)>=1 && strlen($name)<=100){		
 			$this->name = $name;
 
 		}else{
 			echo 'Nom incorrect';
 		}
 	return $this;
+	}
 }
