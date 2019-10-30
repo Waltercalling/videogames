@@ -15,5 +15,11 @@ body{
 .fa-headset{
 	color: green;
 	font-size: 1.5em;
+}
 
+.bg-black{
+	background-color: black;
+}
+h1{
+	padding-top: 5%;
 }

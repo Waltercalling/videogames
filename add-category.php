@@ -22,9 +22,10 @@
 		$manager = new categoryManager($bdd);
 		$category = new Category (['type' => $_POST['catName']]);
 		$manager->addCategory($category);
-	}else{
-		echo'formulaire vide';
 	}
+	// else{
+	// 	echo'formulaire vide';
+	// }
 
 	?>
 	<form class="border border-dark rounded bg-light p-5" action="" method="POST">
