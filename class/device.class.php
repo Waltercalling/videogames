@@ -17,9 +17,9 @@ class Device {
 	}
 
 
-	
+
 	public function getId_device(){ return $this->id_device;}
-	public function getNom(){ return $this->name;}
+	public function getName(){ return $this->name;}
 
 	private function setId_device($id){
 		$this->id_device = $id;
