@@ -17,7 +17,7 @@ public function addCategory(Category $category) {
 	  $add_category->execute();
 	  // Close cursor of the insert category
 	  $add_category->closeCursor();
-	  echo '<p><strong><u> Catégorie bien ajoutée !!</u></strong></p>';
+	  echo '<p><strong><u>Catégorie bien ajoutée !!</u></strong></p>';
 
 	}
 
@@ -33,7 +33,7 @@ public function deleteCategory(Category $category){
 
 public function getObjCategory(){
     $categoryObjet = [];
-    $category = $this->db->query('SELECT id_category, category.type FROM category');
+    $category = $this->db->query('SELECT category.id_category, category.type FROM category');
     while ($data = $category->fetch(PDO::FETCH_ASSOC)){
       $categoryObjet[] = new Category($data);
     }
