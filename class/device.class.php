@@ -23,7 +23,10 @@ class Device {
 		$this->id_device = $id;
 	}
 	public function setName($name){
-		$this->name = $name;
-	}
+		if (is_string($modele) && strlen($modele)>=1 && strlen($modele)<=100){		
+			$this->name = $name;
+		}else{
+			echo 'Nom incorrect';
+		}
 
 }
