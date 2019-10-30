@@ -22,10 +22,11 @@ class Studio{
     /******************CREATION DES SETTERS *******************/
     public function setName($name){
         if(is_string($name) && strlen($name)>=1 && strlen($name)<=100){
-            $this->name = $name;
+            $this->name = $name;   
         }else{
             echo "Le nom du studio n'existe pas";
         }
+        return $this;
     }
 
 
@@ -35,6 +36,7 @@ class Studio{
         }else{
             echo "Le lien est invalide";
         }
+        return $this;
     }
     private setId_studio($id_studio){
         $this->id_studio = $id_studio;
