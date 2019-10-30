@@ -22,7 +22,7 @@
           // var_dump($categorydel);
 	?>
 
-<section class="border border-dark w-50 m-auto rounded shadow-sm">
+<section class="border border-dark w-50 m-auto rounded shadow">
 	<table class="m-auto table table-striped table-hover">
 		<thead class="thead-dark text-white">
 			<th scope="col" class="p-3">Id</th>

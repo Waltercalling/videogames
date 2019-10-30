@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <!-- Head load -->
-<?php include("inc/head.php"); ?>
+<?php include_once("inc/head.php"); ?>
 <title>Ajouter une catégorie</title>
 </head>
 <!-- Database connexion -->
@@ -11,7 +11,7 @@
 
 <body>
 	<!-- Header -->
-	<?php include("inc/header.php"); ?>
+	<?php include_once("inc/header.php"); ?>
 	<main>
 
 	<h1 class="text-center my-3">Ajouter une catégorie</h1>
@@ -47,7 +47,7 @@
 	</form>
 </section>
 	<!-- Footer -->
-	<?php include("inc/footer.php"); ?>
+	<?php include_once("inc/footer.php"); ?>
 
 </body>
 </html>
