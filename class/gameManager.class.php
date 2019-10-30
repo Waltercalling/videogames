@@ -19,8 +19,9 @@ Class gameManager{
     }
 
     public function __construct($db){
-        $db = $this->db;
-        unset ($this); // destruction de l'objet
-        $this->setDb($db);
+        $db = $this->db; // récupération du connecteur à la base de données
+        $db->closeCursor(); // fermeture de l'accès à la base de données
+        unset ($this); // destruction de l'objet gameManager appelant
+        
         
     }
