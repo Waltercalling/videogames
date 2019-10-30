@@ -1,0 +1,15 @@
+Exercice PHP-POO : Le mini clone de Jeuxvideo.com
+Concevoir la BDD suivant les indications suivantes :
+- Le site propose une liste détaillée de jeux.
+- Un jeu est défini par un titre, une description, un lien (vers son site), un pegi, une catégorie choisie dans une liste prédéfinie (FPS, RPG etc..), un éditeur (nom de l'éditeur et lien vers son site), et un support lui aussi prédéfini (PC, PS4..) ainsi qu'une date de sortie adaptée à chacun des supports.
+- Vous pouvez rajouter des critères si vous vous sentez inspirés...
+
+- Partie optionnelle si on a le temps : - Le site n'est utilisable que par un utilisateur préalablement enregistré.
+- Il est défini par un pseudo (entre 5 et 8 caractères), un email et un mot de passe (minimum 8 caractères).
+- Il possède un statut soit utilisateur (consultation uniquement) soit admin (peut modifier et intéragir avec la bdd).
+
+A faire ... une belle classe jeu pour reprendre toutes ces caractéristiques
+...et quand il est tout joli tout beau (et que tout fonctionne), un manager de services pour gérer toutes les fonctionalités possibles (notre ami le CRUD).
+Et en dernier quand tout est testé et que ça fonctionne, lachez-vous avec Bootstrap pour faire le plus beau site de la planète et 10 fois plus beau que JeuxVideo.com (sisi c'est possible !!).
+Et si vous êtes performants (ce dont je ne doute pas), on ajoute des fonctionalités (images, tests, avis des utlisateurs....)
+On va les enterrer JeuxVideo.com !! (..... mais ça va être chaud pour le temps !!!!)
