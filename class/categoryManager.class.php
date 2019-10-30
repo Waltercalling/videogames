@@ -22,7 +22,7 @@ public function addCategory(Category $category) {
 	}
 
 public function listCategory(){
-	return $this->db->query('SELECT category.type FROM category')->fetchAll(PDO::FETCH_ASSOC);
+	return $this->db->query('SELECT category.id_category, category.type FROM category')->fetchAll(PDO::FETCH_ASSOC);
 }
 
 }

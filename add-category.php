@@ -18,10 +18,12 @@
 
 <section class="w-50 m-auto">
 	<?php
-	if (isset($_POST['catName'])){
+	if (isset($_POST['catName']) && !empty($_POST['catName'])){
 		$manager = new categoryManager($bdd);
 		$category = new Category (['type' => $_POST['catName']]);
 		$manager->addCategory($category);
+	}else{
+		echo'formulaire vide';
 	}
 	?>
 	<form class="border border-dark rounded bg-light p-5" action="" method="POST">
