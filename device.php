@@ -42,7 +42,7 @@
 				<td class="p-3"><?= $value->getName(); ?></td>
 				<td class="text-right align-middle">
 					<div class="d-flex flex-lg-row justify-content-lg-around">
-						<div><a href="deviceUpdate.php?id=<?= $value->getId_device();?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
+						<div><a href="deviceUpdate.php?id=<?= $value->getId_device() ;?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
 						<div><a class="confirmation" href="deviceDelete.php?id=<?= $value->getId_device();?>"><i class="fas fa-trash-alt" title="Supprimer"></i></a></div>
 					</div>
 				</td>

@@ -19,7 +19,7 @@
 
 <section class="w-50 m-auto">
 	
-	<form class="border border-dark rounded bg-light p-5" action="device.php" method="POST">
+	<form class="border border-dark rounded bg-light p-5" action="" method="POST">
 		
 		<label for="supName">Nom du support</label>
 		<input type="text" name="supName" class="form-control" />

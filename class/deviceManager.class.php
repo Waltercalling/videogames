@@ -18,6 +18,7 @@
 			//closeCursor() libère la connexion au serveur, permettant aisni à d'autres requêtes SQL d'être exectuées
 			$add_device->closeCursor();
 			echo '<p>Device Added</p>';
+			header('location:device.php');
 
 		}
 
@@ -27,15 +28,15 @@
 			return $read_device->fetchAll(PDO::FETCH_ASSOC);
 		}
 
-		public function readObj(){
-				$devices = [];
-				$read_object = $this->_db->query('SELECT * FROM device');
-				while ($obj = $read_object->fetch(PDO::FETCH_ASSOC)) {
-				    $devices[] = new Device($obj);
+			public function readObj(){
+					$devices = [];
+					$read_object = $this->_db->query('SELECT * FROM device');
+					while ($obj = $read_object->fetch(PDO::FETCH_ASSOC)) {
+					    $devices[] = new Device($obj);
 
+					}
+					return $devices;
 				}
-				return $devices;
-			}
 
 		public function del(Device $device){
 		$this->_db->exec('DELETE FROM device WHERE id_device='.$device->getId_device());
@@ -46,6 +47,9 @@
 		$new_device->bindValue(':id_device', $device->getId_device(), PDO::PARAM_INT);
 		$new_device->bindValue(':name', $device->getName(), PDO::PARAM_STR);
 	
-	} 
+		}
 
+		public function delById($id){
+		$this->_db->exec('DELETE FROM device WHERE id_device ='.$id); 
+		}
 	}
