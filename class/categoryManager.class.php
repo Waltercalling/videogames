@@ -26,7 +26,7 @@ public function listCategory(){
 
 // Delete function 
 public function deleteCategory(Category $category){
-	$del_Category = $this->db->query('DELETE FROM category WHERE id ='.$category->getId_category());
+	$del_Category = $this->db->query('DELETE FROM category WHERE id_category ='.$category->getId_category());
 	return $this;
 }
 
