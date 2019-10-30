@@ -8,8 +8,9 @@
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav ml-auto">
 			<li class="nav-item active">
-				<a class="nav-link" href="index.php">accueil <span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="index.php"><i class="fas fa-home pr-3"></i>Accueil <span class="sr-only">(current)</span></a>
 			</li>
+
 			<!-- Menu Game -->
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -22,7 +23,6 @@
 			</li>
 	      <!-- Menu Category -->
 	      <li class="nav-item dropdown">
-
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	          Catégorie
 	        </a>
@@ -32,7 +32,6 @@
 	        </div>
 
 	        <!-- Menu Support -->
-	      
 	       <li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				Support
@@ -40,9 +39,18 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 				<a class="dropdown-item" href="deviceAdd.php"><i class="fas fa-caret-right pr-3"></i>Ajouter</a>
 				<a class="dropdown-item" href="device.php"><i class="fas fa-caret-right pr-3"></i>Liste</a>
-				</div>
-	        
+				</div>  
 	      </li>
+	      	<!-- Menu Game -->
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Editeur
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" href="add-studio.php"><i class="fas fa-caret-right pr-3"></i>Ajouter</a>
+				<a class="dropdown-item" href="list-studio.php"><i class="fas fa-caret-right pr-3"></i>Liste</a>
+				</div>
+			</li>
 	    </ul>
 	  </div>
 	</nav>
