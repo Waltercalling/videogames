@@ -1,7 +1,7 @@
 <?php
 	
 	spl_autoload_register(function($classe){
-			require_once 'classes/'.$classe.'.class.php';
+			require_once 'class/'.$classe.'.class.php';
 			
 		});
 
@@ -12,6 +12,6 @@
 	]);
 
 
-	$manager = new GuitareManager($bdd);
+	$manager = new DeviceManager($bdd);
 
 ?>
