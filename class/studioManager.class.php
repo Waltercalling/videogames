@@ -12,6 +12,18 @@ class StudioManager{
     }
 
 /*****************CREATION DE LA FONCTION AJOUT ******************/
+    public function getShowItems(){
+        $studios = [];
+        $listStudio = $this->bdd->query('SELECT * FROM studio;');
+        while($donnes = $listStudio->fetch(PDO::FETCH_ASSOC)){
+            $studios[] = new Studio($donnes);
+        };
+        return $studios;
+    }
+
+
+
+
 
     public function addStudio(Studio $studio){
         $addStudio = $this->bdd->prepare('INSERT INTO studio(name, link)

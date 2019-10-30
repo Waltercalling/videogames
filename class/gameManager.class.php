@@ -44,6 +44,8 @@ Class gameManager{
          $id_category = $game->getId_category();
          $id_studio = $game->getId_studio();
 
+
+
     }
 
     public function getGame($game){
@@ -61,8 +63,8 @@ Class gameManager{
 
 
     public function getListGame($game){
-        // on récupère le connecteur à la base de donnée
-        $db = $this->db;
+        
+        return $game->getTabListGame();
         
 
     }
