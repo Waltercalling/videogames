@@ -26,9 +26,18 @@ public function listCategory(){
 }
 
 // Delete function 
-public function delete(Category $category){
+public function deleteCategory(Category $category){
 	$del_Category = $this->db->query('DELETE FROM category WHERE id ='.$category->getId_category());
 	return $this;
 }
+
+public function getObjCategory(){
+    $categoryObjet = [];
+    $category = $this->db->query('SELECT id_category, category.type FROM category');
+    while ($data = $category->fetch(PDO::FETCH_ASSOC)){
+      $categoryObjet[] = new Category($data);
+    }
+    return $categoryObjet;
+  }
 
 }
