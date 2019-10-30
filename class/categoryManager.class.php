@@ -25,4 +25,10 @@ public function listCategory(){
 	return $this->db->query('SELECT category.id_category, category.type FROM category')->fetchAll(PDO::FETCH_ASSOC);
 }
 
+// Delete function 
+public function delete(Category $category){
+	$del_Category = $this->db->query('DELETE FROM category WHERE id ='.$category->getId_category());
+	return $this;
+}
+
 }
