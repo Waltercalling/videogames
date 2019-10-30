@@ -35,9 +35,9 @@ Class gameManager{
 
     public function addGame($game){
     // on récupère le connecteur à la base de donnée
-    $db = $this->db;
-
-        $title = $game->getTitle();
+        $db = $this->db;
+        $tabvar = $game->tabVars();
+         $title = $game->getTitle();
          $description = $game->getDescription();
          $pegi = $game->getPegi();
          $link = $game->getLink();
@@ -73,3 +73,5 @@ Class gameManager{
         
 
     }
+
+    
