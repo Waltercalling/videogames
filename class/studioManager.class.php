@@ -11,7 +11,7 @@ class StudioManager{
         $this->bdd = $bdd;
     }
 
-/*****************CREATION DE LA FONCTION AJOUT ******************/
+/*****************CREATION DE LA FONCTION Afficher ******************/
     public function getShowItems(){
         $studios = [];
         $listStudio = $this->bdd->query('SELECT * FROM studio;');
@@ -23,7 +23,7 @@ class StudioManager{
 
 
 
-
+/**********************************CREATION DE LA FONCTION AJOUTER***** *********/
 
     public function addStudio(Studio $studio){
         $addStudio = $this->bdd->prepare('INSERT INTO studio(name, link)
@@ -33,7 +33,19 @@ class StudioManager{
         $addStudio->execute();
         $addStudio->closeCursor();
     }
-}
+
+    /**********************************CREATION DE LA FONCTION SUPPRIMER***** *********/
+
+    public function deleteStudio(Studio $studio){
+        $this->bdd->exec("DELETE FROM studio WHERE id_studio = ".$studio->getId_studio());
+    }
+
+
+    public function getStudiobyId($id_studio){
+        $donnes = $this->bdd->exec("SELECT * FROM studio WHERE id_studio =" .$id_studio);
+        
+            }
+    }
 
 
 ?>

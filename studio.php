@@ -9,10 +9,7 @@
 
         $bdd = new PDO('mysql:host=localhost;dbname=jvcom', 'root', '', [PDO::ATTR_EMULATE_PREPARES=>false]);
 
-        $studio1 = new Studio([
-            'name' => 'Bethesda',
-            'link' => 'https://bethesda.net/en/dashboard'
-        ]);
+        
 
 
         $manager = new StudioManager($bdd);
@@ -37,9 +34,10 @@
             ?> 
             <tr>
                     <td><?= $value->getName(); ?></td>
+                    <td><?= $value->getId_studio(); ?></td>
                     <td><?= $value->getLink(); ?></td>
-                    <td><a class="btn btn-danger" href="deleteStudio.php">Supprimer</a></td>
-                    <td><a class="btn btn-warning" href="upgradeStudio.php">Modifier</a></td>
+                    <td><a class="btn btn-danger" href="deleteStudio.php?id=<?= $value->getId_studio();?>">Supprimer</a></td>
+                    <td><a class="btn btn-warning" href="upgradeStudio.php?id=<?= $value->getId_studio();?>">Modifier</a></td>
             </tr>
                 <?php endforeach;?>
             
