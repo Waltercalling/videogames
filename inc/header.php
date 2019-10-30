@@ -17,7 +17,7 @@
 	        </a>
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 	          <a class="dropdown-item" href="#">Ajout</a>
-	          <a class="dropdown-item" href="#">Liste</a>
+	          <a class="dropdown-item" href="list-category.php">Liste</a>
 	        </div>
 	        <!-- Menu Support -->
 	      </li>
