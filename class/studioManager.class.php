@@ -14,7 +14,12 @@ class StudioManager{
 /*****************CREATION DE LA FONCTION AJOUT ******************/
 
     public function addStudio(Studio $studio){
-        $addStudio
+        $addStudio = $this->bdd->prepare('INSERT INTO studio(name, link)
+                                         VALUES (:name, :link)');
+        $addStudio->bindValue(':name', $studio->getName(), PDO::PARAM_STR);
+        $addStudio->bindValue(':link', $studio->getLink(), PDO::PARAM_STR);
+        $addStudio->execute();
+        $addStudio->closeCursor();
     }
 }
 
