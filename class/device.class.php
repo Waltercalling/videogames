@@ -1,7 +1,7 @@
 <?php
 class Device {
 	private $id_device;
-	private $nom;
+	private $name;
 
 		//Un tableau de données doit être passé à la fonction (d'où le prefixe "array").
 	public function __construct(array $donnees) {
@@ -16,6 +16,14 @@ class Device {
 		}
 	}
 
-	
+	public function getId_device(){ return $this->id_device;}
+	public function getNom(){ return $this->name;}
+
+	private function setId_device($id){
+		$this->id_device = $id;
+	}
+	public function setName($name){
+		$this->name = $name;
+	}
 
 }
