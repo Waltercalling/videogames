@@ -7,12 +7,12 @@
 
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav ml-auto">
-			<li class="nav-item active">
+			<li class="nav-item active px-5">
 				<a class="nav-link" href="index.php" title="Retour à l'accueil"><i class="fas fa-home pr-3"></i>Accueil</a>
 			</li>
 
 			<!-- Menu Game -->
-			<li class="nav-item dropdown">
+			<li class="nav-item dropdown px-4">
 				<a class="nav-link dropdown-toggle" title="Menu des jeux" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				Jeux
 				</a>
@@ -22,7 +22,7 @@
 				</div>
 			</li>
 	      <!-- Menu Category -->
-	      <li class="nav-item dropdown">
+	      <li class="nav-item dropdown px-4">
 	        <a class="nav-link dropdown-toggle" title="Menu des catégories" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	          Catégorie
 	        </a>
@@ -32,7 +32,7 @@
 	        </div>
 
 	        <!-- Menu Support -->
-	       <li class="nav-item dropdown">
+	       <li class="nav-item dropdown px-4">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" title="Menu des versions" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				Support
 				</a>
@@ -41,8 +41,8 @@
 				<a class="dropdown-item" href="device.php" title="Liste des versions"><i class="fas fa-caret-right pr-3"></i>Liste</a>
 				</div>  
 	      </li>
-	      	<!-- Menu Game -->
-			<li class="nav-item dropdown">
+	      	<!-- Menu Studio -->
+			<li class="nav-item dropdown px-4">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" title="Menu des éditeurs" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				Editeur
 				</a>
