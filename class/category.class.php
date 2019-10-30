@@ -25,6 +25,12 @@ class Category {
 		return $this->type;
 	}
 	public function setType($type){
-		$this->type = $type;
+		if(is_string($manufacturer) && strlen($manufacturer)>=1 && strlen($manufacturer)<= 90){
+			$this->type = $type;
+		}else{
+			echo'Type invalide';
+			return die();
+		}
+		return $this;
 	}
 }
