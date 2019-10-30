@@ -1,0 +1,11 @@
+CATEGORY: ID_category, type
+:
+SUPPORT: ID_support, system
+
+belong to, 1N CATEGORY, 11 GAME
+GAME: ID_game, title, description, link
+have version, 1N GAME, 1N SUPPORT: date, number
+
+EDITOR: ID_editor, name, link
+edit, 1N EDITOR, 11 GAME
+:
