@@ -12,7 +12,7 @@ class categoryManager{
 public function add(Category $category) {
 	  // Prepare category insert
 	  $add_category = $this->db->prepare('INSERT INTO category(type) VALUES(:type)');
-	  $add_category->bindValue(':fabricant', $category->getType(), PDO::PARAM_STR);
+	  $add_category->bindValue(':type', $category->getType(), PDO::PARAM_STR);
 	  // Execute insert category
 	  $add_category->execute();
 	  // Close cursor of the insert category
