@@ -113,7 +113,7 @@ class GAME{
     }
 
     // Pour renvoyer les données sous forme de tableau
-    public function tabVars(){ 
+    public function getTabListGame(){ 
         return get_object_vars($this);
     }
 
