@@ -12,10 +12,10 @@
 
 <section class="w-50 m-auto">
 	<?php
-	if (isset($_POST['catName']) && !empty($_POST['catName'])){
+	if (isset($_POST['version']) && !empty($_POST['version'])){
 		$manager = new versionManager($bdd);
-		$category = new Version (['date' => $_POST['versDate']]);
-		$manager->addCategory($category);
+		$addVersion = new Version(['id_game' => $_POST['game'], 'id_device' => $_POST['version'], 'date' => $_POST['versDate'], 'version' => $_POST['versNum']]);
+		$manager->addVersion($addVersion);
 	}
 	// else{
 	// 	echo'formulaire vide';
@@ -24,29 +24,17 @@
 	?>
 	<form class="border border-dark rounded bg-light p-5" action="" method="POST">
 
-
 		 <?php
+		// Device list objet
+	        $dm = new DeviceManager($bdd);
+	        $listDevice = $dm->readObj();
 
-        $dm = new DeviceManager($bdd);
-        $listDevice = $dm->readObj();
-
-
+	    // Manager list objet
         $gm = new GameManager($bdd);
         $listGame = $gm->getObjectGame();
-
-        
         ?>
 
-		<label for="version">Choisissez le support</label>
-        <select name="version" id="version" class="form-control">
-            <option value="" selected>--Support--</option>
-            <?php
-            foreach ($listDevice as $idList => $device){
-                echo '<option value="'.$device->getId_device().'">'.$device->getName().'</option>';
-            }
-            ?>
-        </select>
-
+        <!-- Select for game -->
         <label for="game">Choisissez le jeu</label>
         <select name="game" id="game" class="form-control">
             <option value="" selected>--Jeu--</option>
@@ -57,12 +45,22 @@
             ?>
         </select>
 
-		
-		<label for="versName">Numéro de version</label>
-		<input type="text" name="versName" class="form-control" id="versName"/>
+        <!-- Select for support -->
+        <label for="version">Choisissez le support</label>
+        <select name="version" id="version" class="form-control">
+            <option value="" selected>--Support--</option>
+            <?php
+            foreach ($listDevice as $idList => $device){
+                echo '<option value="'.$device->getId_device().'">'.$device->getName().'</option>';
+            }
+            ?>
+        </select>
 
 		<label for="versDate">Date</label>
 		<input type="date" name="versDate" min="1900" id="versDate" class="form-control text-center"/>
+		
+		<label for="versNum">Numéro de version</label>
+		<input type="text" name="versNum" class="form-control" id="versNum"/>
 
 		<div class="row">
 			<!-- Cancel Button -->

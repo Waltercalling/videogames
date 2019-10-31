@@ -50,22 +50,21 @@ class Version {
 		return $this->date;
 	}
 	public function setDate($date){
-			$this->date = $date;
-		}
+		$this->date = $date;
 		return $this;
 	}
 
 
 
 	// Get and Set Name
-	public function getName(){ 
-		return $this->name;
+	public function getVersion(){ 
+		return $this->version;
 	}
-	public function setName($name){
-		if(is_string($name) && strlen($name)>=1 && strlen($name)<=10){
-			$this->name = $name;
+	public function setVersion($version){
+		if(is_string($version) && strlen($version)>=1 && strlen($version)<=10){
+			$this->version = $version;
 		}else{
-			echo'Nom invalide';
+			echo'Version invalide';
 		}
 		return $this;  // pour pouvoir chainer les méthodes
 	}
