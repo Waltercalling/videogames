@@ -31,9 +31,9 @@
                 <form class="border border-dark rounded bg-light p-5" action="#" method="POST">
                 <?php foreach($studioId as $key => $value): ?> 
                     <label for="studio">Nom de studio : </label>
-                    <input type="text" name="studio" id="link" class="form-control" placeholder="<?= $value->getName();?>">
+                    <input type="text" name="studio" id="link" class="form-control" value="<?= $value->getName();?>">
                     <label for="link">Lien du site web : </label>
-                    <input type="text" name="link" id="link" class="form-control" placeholder="<?= $value->getLink();?>">
+                    <input type="text" name="link" id="link" class="form-control" value="<?= $value->getLink();?>">
                     <div class="row">
                     <?php endforeach;?>
                         <!-- Cancel Button -->
