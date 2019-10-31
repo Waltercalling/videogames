@@ -27,12 +27,12 @@
     // echo "<pre>";
     // print_r($list);
     // echo "</pre>";
- //sforeach ($list as $champ => $valeur)
+ 
 
 
 
  
-    //$game->getTabListGame();
+    
     ?>
     <section class="border border-dark w-50 m-auto rounded shadow">
         <table class="m-auto table table-striped table-hover">
@@ -51,7 +51,7 @@
             </thead>
 
         <?php 
-            foreach ($list as $game){
+            foreach ($list as $key => $game){
                 echo'<tr>';
                 foreach($game as $champ => $valeur){
                     // $method = 'get'.ucfirst($champ);
@@ -65,8 +65,8 @@
                 ?><!--  modifier et supprimer -->
                         <td class="text-right align-middle">
                             <div class="d-flex flex-lg-row justify-content-lg-around">
-                                <div><a class="cancel" href="update-game.php?id="><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
-                                <div><a href="delete-game.php?id="><i class="delete fas fa-trash-alt" title="Supprimer"></i></a></div>
+                                <div><a class="cancel" href="update-game.php?id=<?=$game['id_game']?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
+                                <div><a href="delete-game.php?id=<?=$game['id_game']?>"><i class="delete fas fa-trash-alt" title="Supprimer"></i></a></div>
                             </div>
                             
                         </td>

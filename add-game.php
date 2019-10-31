@@ -108,6 +108,8 @@ if (isset($_POST['title']) && !empty($_POST['title'])){
 
     $game= New Game($gameIn); 
     $gm->addGame($game);
+    header('Location:list-game.php');
+    exit;
 }
     //traitement
         

@@ -125,11 +125,12 @@ Class GameManager{
 
     }
 
-    public function deleteGame($game){
-        // on récupère le connecteur à la base de donnée
-        $db = $this->db;
-        
 
-    }
+    // Delete function 
+public function deleteGame($idCat){
+	$del_Category = $this->db->exec('DELETE FROM game WHERE id_game ='.$idCat);
+	return $this;
+}
+
 }
     
