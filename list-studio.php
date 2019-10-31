@@ -16,7 +16,7 @@
         $tab_list = $manager->getShowItems();
 ?>
 
-<body>
+
     <h1 class="text-center my-3">Liste des éditeurs</h1>
     <section class="border border-dark w-50 m-auto rounded shadow">
         <table class="m-auto table table-striped table-hover">
@@ -43,5 +43,5 @@
             </tbody>
         </table>  
     </section>   
-</body>
+
 <?php require_once 'inc/footer.php'; ?>
