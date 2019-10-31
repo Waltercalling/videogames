@@ -3,10 +3,7 @@
 include_once("inc/connect.php");
 
 	$manager = new categoryManager($bdd);
-	$categorydel = $manager->getObjCategory();
-	// $idCat = ($categorydel[1]->getId_category());
-// echo '<pre>';
-	// var_dump($idCat);
+	$idCat = $_GET['id'];
 
-	$manager->deleteCategory($categorydel[0]);
+	$manager->deleteCategory($idCat);
 	header('Location:list-category.php');

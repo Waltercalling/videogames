@@ -19,8 +19,8 @@
           // $idCat = $manager->getId_category();
           $categorylist = $manager->getObjCategory();
 		  // $idcat = $manager->getId_category($listCategory);
-          echo'<pre>';
-         var_dump($categorylist);
+         //  echo'<pre>';
+         // var_dump($categorylist);
 	?>
 
 <section class="border border-dark w-50 m-auto rounded shadow">
@@ -39,8 +39,8 @@
 				<td class="p-3"><?= $value->getType(); ?></td>
 				<td class="text-right align-middle">
 					<div class="d-flex flex-lg-row justify-content-lg-around">
-						<div><a class="cancel" href="update-category.php?id=<?= $value->spl_object_id(); ?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
-						<div><a href="delete-category.php?id="><i class="delete fas fa-trash-alt" title="Supprimer"></i></a></div>
+						<div><a class="cancel" href="update-category.php?id=<?= $value->getId_category(); ?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
+						<div><a href="delete-category.php?id=<?= $value->getId_category(); ?>"><i class="delete fas fa-trash-alt" title="Supprimer"></i></a></div>
 					</div>
 				</td>
 			</tr>
@@ -53,9 +53,6 @@
 
 	<!-- Footer -->
 	<?php include("inc/footer.php"); ?>
-
-</body>
-</html>"); ?>
 
 </body>
 </html>
