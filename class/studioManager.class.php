@@ -51,6 +51,16 @@ class StudioManager{
         $updateStudio->closeCursor();
     }
     
+
+
+    public function getStudioById(){
+        $studiosId = [];
+        $listStudio = $this->bdd->query("SELECT * FROM studio WHERE id_studio = ".$_GET['id']);
+        while($donnes = $listStudio->fetch(PDO::FETCH_ASSOC)){
+            $studiosId[] = new Studio($donnes);
+        };
+        return $studiosId;
+    }
     } 
 
 
