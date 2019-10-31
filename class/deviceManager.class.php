@@ -61,4 +61,19 @@
 		$new_device->execute();
 	
 		}
+
+			public function readObjById(){
+					$devices = [];
+					$read_object = $this->_db->query('SELECT * FROM device WHERE id_device='.$_GET['id']);
+					while ($obj = $read_object->fetch(PDO::FETCH_ASSOC)) {
+					    $devices[] = new Device($obj);
+
+					}
+					return $devices;
+				}
+
+	public function readById(){
+			$read_device = $this->_db->query('SELECT * FROM device WHERE id_device='.$_GET['id']);
+			return $read_device->fetch(PDO::FETCH_ASSOC);
+		}
 	}

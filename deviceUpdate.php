@@ -17,10 +17,15 @@
 		<?php 		
 		$manager = new DeviceManager($bdd);
 		$id = $_GET['id'];
-	//	$devices = $manager->readObj();
+		$devices = $manager->readObj();
+		$oldname = $manager->readObjById();
 
+
+		foreach ($oldname as $key => $value) {
+			
+		
 ?>
-		<input type="text" name="updName" class="form-control" placeholder="[attends l'encien nom]" />
+		<input type="text" name="updName" class="form-control" placeholder="<?= $value->getName();?>" /> <?php } ?>
 
 		<div class="row">
 			<!-- Cancel Button -->
