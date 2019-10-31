@@ -18,8 +18,28 @@
 
     <!-- ici il faut récupérer les infos étendues du jeu, et mettre en value etc... chaque champ -->
 
-    <?php // récupération de l'id du jeu passé en get
-        $id_jeu = $GET['id_jeu'];
+    <?php 
+        
+        // récupération du connecteur à la base de donnée (dans $bdd)
+        include_once("inc/connect.php");
+        // autochargement des classes
+        spl_autoload_register(function($classe){        
+            require_once ('class/'.$classe.'.class.php');
+        });
+        // récupération de l'id du jeu passé en get
+        $id_jeu = $GET['id'];
+        
+
+
+        // aller dans la base de données récupérer la ligne avec l'id correspondant, donc préparer un update:
+        // pour ça :
+        // créer un nouvel objet gamemanager lié à la base de donnée
+        $gm = new gameManager($bdd);
+        // faire update de l'id
+        // dans la classe gamemanager, ajouter une méthode qui renvoie l'objet correspondant à l'id
+
+        // puis l'unsetter 
+
     ?>
     <form class="border border-dark rounded bg-light p-5" action="" method="POST">
         <label for="title">TITRE :</label>
