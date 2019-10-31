@@ -19,7 +19,7 @@
 		<thead class="thead-dark text-white font-weight-bold">
 			<th scope="col" class="p-3">Id</th>
 			<th scope="col" class="p-3 w-100">Catégorie</th>
-			<th scope="col" class="p-3 text-center w-25">Editer</th>
+			<th scope="col" class="p-3 text-center"></th>
 
 		</thead>
 

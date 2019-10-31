@@ -17,11 +17,11 @@
 	<table class="m-auto table table-striped table-hover">
 		<thead class="thead-dark text-white font-weight-bold">
 			<th scope="col" class="p-3">Id</th>
-			<th scope="col" class="p-3">Jeu</th>
-			<th scope="col" class="p-3">Support</th>
-			<th scope="col" class="p-3">Date</th>
+			<th scope="col" class="p-3 w-25">Jeu</th>
+			<th scope="col" class="p-3 w-25">Support</th>
+			<th scope="col" class="p-3 w-25">Date</th>
 			<th scope="col" class="p-3">Version</th>
-			<th scope="col" class="p-3 text-center w-25">Editer</th>
+			<th scope="col" class="p-3 text-center"></th>
 
 		</thead>
 

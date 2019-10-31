@@ -20,12 +20,12 @@
 	//$manager->del($devices[9]);
 
 	?>
-<table class="w-75 m-auto">
+<table class="w-50 m-auto">
 		<thead class="bg-dark text-white">
 			<th class="p-3">Id</th>
-			<th class="p-3">Support</th>
-			<th class="p-3">Modifier</th>
-			<th class="p-3">Supprimer</th>
+			<th class="p-3 w-100">Support</th>
+			<th class="p-3 text-center"></th>
+
 
 		</thead>
 
