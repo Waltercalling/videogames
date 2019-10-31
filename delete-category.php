@@ -7,4 +7,4 @@
 		$manager = new categoryManager($bdd);
 //		$devices = new Device (['name' => $_POST['supName']]);
 		$manager->deleteCategory($id);
-	//	header('location:list-category.php');
+		header('location:list-category.php');
