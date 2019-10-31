@@ -4,25 +4,25 @@
       
     
         });
-        require_once 'inc/head.php';
         require_once 'inc/header.php';
 
         $bdd = new PDO('mysql:host=localhost;dbname=jvcom', 'root', '', [PDO::ATTR_EMULATE_PREPARES=>false]);
 
-        $id = $_GET['id'];
+        $studio = $_GET['id'];
 
             if(isset($_POST['studio']) || isset($_POST['link'])){
                 $manager = new StudioManager($bdd);
                 $studio = new Studio(['name'=>$_POST['studio'], 'link'=>$_POST['link']]);
                 $manager->updateStudio($studio);
                 echo "Studio bien modifié";
+                header('Location: list-studio.php');
 
             }else{
                 echo "Erreur lors du formulaire";
             }
-
+     
 ?>
-    <body>
+
             <h1 class="text-center my-3">Modifier un éditeur</h1>
         
             <div class='container'>
@@ -43,6 +43,6 @@
                     </div>
                 </form>
             </div>
-</body>
+
 
 <?php require_once 'inc/footer.php'; ?>
