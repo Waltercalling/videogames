@@ -14,9 +14,12 @@
 	<?php include("inc/header.php"); ?>
 
 
-	<h1 class="text-center my-3">Ajouter un Jeu</h1>
+	<h1 class="text-center my-3">Modifier les données d'un Jeu</h1>
 
-    
+    <!-- ici il faut récupérer les infos étendues du jeu, et mettre en value etc... chaque champ -->
+
+    <!-- on n'a que l'id du jeu ! ça craint ! ça serait plus simple d'avoir l'objet => OBJECTIF OBJET -->
+    <!-- peut être avec un $_session[maj] = l'objet -->
     <form class="border border-dark rounded bg-light p-5" action="" method="POST">
         <label for="title">TITRE :</label>
         <input id='title' name='title' type="text" class="form-control"/>
@@ -84,11 +87,11 @@
         <div class="row">
 			<!-- Cancel Button -->
 			<div class="col-12 col-lg-4 mb-2 my-2">
-				<a title="Annuler" href="index.php" type="button" name="back" class="cancel btn btn-danger shadow-sm border border-dark w-100"/>Annuler</a>
+				<a title="Annuler" href="index.php" type="button" name="back" class="cancel btn btn-danger shadow-sm border border-dark w-100">Annuler</a>
 			</div>
 			<!-- Validate Button -->
 			<div class="col-12 col-lg-6 offset-lg-2 my-2">
-				<input type="submit" name="sendCat" value="Enregistrer le jeu" class="btn btn-success shadow-sm border border-dark w-100" title="Enregistrer le jeu"/>
+				<input type="submit" name="sendCat" value="Mettre à jour" class="btn btn-success shadow-sm border border-dark w-100" title="Mettre à jour les données du jeu"/>
 			</div>	
 		</div>
 
