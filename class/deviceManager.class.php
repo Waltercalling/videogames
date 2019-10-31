@@ -18,7 +18,6 @@
 			//closeCursor() libère la connexion au serveur, permettant aisni à d'autres requêtes SQL d'être exectuées
 			$add_device->closeCursor();
 			echo '<p>Device Added</p>';
-			header('location:device.php');
 
 		}
 
