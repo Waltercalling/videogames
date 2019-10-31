@@ -14,7 +14,7 @@
 	<?php include("inc/header.php"); ?>
 
 
-	<h1 class="text-center my-3">Modifier les données d'un Jeu</h1>
+	<h1 class="text-center my-3">Modifier les données d'un jeu</h1>
 
     <!-- ici il faut récupérer les infos étendues du jeu, et mettre en value etc... chaque champ -->
 
@@ -27,7 +27,8 @@
             require_once ('class/'.$classe.'.class.php');
         });
         // récupération de l'id du jeu passé en get
-        $id_jeu = $GET['id'];
+        $id_jeu = $_GET['id'];
+        echo $id_jeu;
         
 
 
@@ -35,6 +36,12 @@
         // pour ça :
         // créer un nouvel objet gamemanager lié à la base de donnée
         $gm = new gameManager($bdd);
+        $objectId = $gm-> getObjectById($id_jeu);
+        echo "<pre>";
+        print_r($objectId);
+        echo "</pre>";
+
+
         // faire update de l'id
         // dans la classe gamemanager, ajouter une méthode qui renvoie l'objet correspondant à l'id
 

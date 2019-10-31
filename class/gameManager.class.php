@@ -89,7 +89,13 @@ Class GameManager{
 
     public function getListGame(){
         $db = $this->db;
-        $sql = "SELECT game.id_game,game.title, game.description, game.pegi, game.link AS gamelink, game.id_category, category.type, game.id_studio,  studio.name, studio.link AS studiolink FROM game
+        //sauvegarde temporaire :
+        // $sql = "SELECT game.id_game,game.title, game.description, game.pegi, game.link AS gamelink, game.id_category, category.type, game.id_studio,  studio.name, studio.link AS studiolink FROM game
+        //         INNER JOIN category ON game.id_category = category.id_category
+        //         INNER JOIN studio ON game.id_studio = studio.id_studio";
+
+
+        $sql = "SELECT game.id_game,game.title, game.description, game.pegi, game.link AS gamelink,  category.type, studio.name, studio.link AS studiolink FROM game
                 INNER JOIN category ON game.id_category = category.id_category
                 INNER JOIN studio ON game.id_studio = studio.id_studio";
         // echo "<br/>".$sql;
@@ -103,22 +109,24 @@ Class GameManager{
         }
     }
 
-        public function getObjectGame(){
-            $db = $this->db;
-            $sql = "SELECT game.id_game,game.title, game.description, game.pegi, game.link AS gamelink, game.id_category, category.type, game.id_studio,  studio.name, studio.link AS studiolink FROM game
-                    INNER JOIN category ON game.id_category = category.id_category
-                    INNER JOIN studio ON game.id_studio = studio.id_studio";
-            // echo "<br/>".$sql;
-            
-            if (!empty($db)){
-                $req = $db->prepare($sql);
-                $req->execute();
-                $gameObject =[];
-                while ($data = $req->fetch(PDO::FETCH_ASSOC)){
-                    $gameObject[] = new Game($data);
-                  }
-                return $gameObject;
-            }
+    public function getObjectGame(){
+        // on récupère le connecteur à la base de données
+        $db = $this->db;
+        $sql = "SELECT game.id_game,game.title, game.description, game.pegi, game.link AS gamelink, game.id_category, category.type, game.id_studio,  studio.name, studio.link AS studiolink 
+                FROM game
+                INNER JOIN category ON game.id_category = category.id_category
+                INNER JOIN studio ON game.id_studio = studio.id_studio";
+        // echo "<br/>".$sql;
+        
+        if (!empty($db)){
+            $req = $db->prepare($sql);
+            $req->execute();
+            $gameObject =[];
+            while ($data = $req->fetch(PDO::FETCH_ASSOC)){
+                $gameObject[] = new Game($data);
+                }
+            return $gameObject;
+        }
 
         
         
@@ -126,9 +134,25 @@ Class GameManager{
     }
 
 
+    public function getObjectById($id){
+        // on récupère le connecteur à la base de données
+        $db = $this->db;
+        $sql = "SELECT game.id_game,game.title, game.description, game.pegi, game.link, game.id_category
+                FROM game
+                WHERE id_game=".$id;;
+        if (!empty($db)){
+            $req = $db->prepare($sql);
+            $req->execute();
+
+            $gameWithId = $req->fetch(PDO::FETCH_ASSOC);
+            return $gameWithId;
+        }
+    }
+
+
     // Delete function 
-public function deleteGame($idCat){
-	$del_Category = $this->db->exec('DELETE FROM game WHERE id_game ='.$idCat);
+    public function deleteGame($idGame){
+	$del_Game = $this->db->exec('DELETE FROM game WHERE id_game ='.$idGame);
 	return $this;
 }
 

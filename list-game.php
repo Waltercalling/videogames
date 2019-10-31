@@ -42,9 +42,7 @@
                 <th scope="col" class="p-3 ">Description</th>
                 <th scope="col" class="p-3 ">Pegi</th>
                 <th scope="col" class="p-3 ">Lien Jeu</th>
-                <th scope="col" class="p-3 ">Id catégorie</th>
                 <th scope="col" class="p-3 ">Type</th>
-                <th scope="col" class="p-3 ">Id studio</th>
                 <th scope="col" class="p-3 ">Nom studio</th>
                 <th scope="col" class="p-3 ">Lien studio</th>
                 <th scope="col" class="p-3 text-center ">Editer</th>
