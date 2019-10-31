@@ -1,8 +1,10 @@
-<?php spl_autoload_register(function($class){require_once'class/'.$class.'.class.php'; }); 
-
-include_once("inc/connect.php");
-
-	$manager = new categoryManager($bdd);
-	$idCat = $_GET['id'];
-	$manager->deleteCategory($idCat);
-	header('Location:list-category.php');
+<?php 
+	spl_autoload_register(function($class){
+		require_once'class/'.$class.'.class.php'; }); 
+	include 'inc/connect.php';
+	$id=$_GET['id'];
+	
+		$manager = new categoryManager($bdd);
+//		$devices = new Device (['name' => $_POST['supName']]);
+		$manager->deleteCategory($id);
+	//	header('location:list-category.php');
