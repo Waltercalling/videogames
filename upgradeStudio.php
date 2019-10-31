@@ -4,26 +4,26 @@
       
     
         });
+        require_once 'inc/head.php';
         require_once 'inc/header.php';
 
         $bdd = new PDO('mysql:host=localhost;dbname=jvcom', 'root', '', [PDO::ATTR_EMULATE_PREPARES=>false]);
 
-       
+        $id = $_GET['id'];
 
-            if(isset($_POST['studio']) && isset($_POST['link'])){
+            if(isset($_POST['studio']) || isset($_POST['link'])){
                 $manager = new StudioManager($bdd);
                 $studio = new Studio(['name'=>$_POST['studio'], 'link'=>$_POST['link']]);
-                $manager->addStudio($studio);
-                echo "Studio bien ajouté";
+                $manager->updateStudio($studio);
+                echo "Studio bien modifié";
 
             }else{
                 echo "Erreur lors du formulaire";
             }
-       
-       
+
 ?>
     <body>
-            <h1 class="text-center my-3">Ajouter un éditeur</h1>
+            <h1 class="text-center my-3">Modifier un éditeur</h1>
         
             <div class='container'>
                 <form class="border border-dark rounded bg-light p-5" action="#" method="POST">

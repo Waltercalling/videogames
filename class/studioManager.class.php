@@ -32,20 +32,23 @@ class StudioManager{
         $addStudio->bindValue(':link', $studio->getLink(), PDO::PARAM_STR);
         $addStudio->execute();
         $addStudio->closeCursor();
+        header('Location: list-studio.php');
     }
 
     /**********************************CREATION DE LA FONCTION SUPPRIMER***** *********/
 
     public function deleteStudio($studio){
         $this->bdd->exec("DELETE FROM studio WHERE id_studio = ".$studio);
+        header('Location: list-studio.php');
     }
 
 
-    // public function getStudiobyId($id_studio){
-    //     $donnes = $this->bdd->exec("SELECT * FROM studio WHERE id_studio =" .$id_studio);
-        
-    //         }
+    public function updateStudio(Studio $studio){
+         $updateStudio = $this->bdd->query("UPDATE studio SET name = ".$studio->getName().",
+                                            link = ".$studio->getLink()." WHERE id = ".$studio->getId_studio());
     }
+    
+    } 
 
 
 ?>
