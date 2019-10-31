@@ -14,8 +14,10 @@
 	<?php
 	if (isset($_POST['version']) && !empty($_POST['version'])){
 		$manager = new VersionManager($bdd);
-		$addVersion = new Version(['id_game' => $_POST['game'], 'id_device' => $_POST['version'], 'date' => $_POST['versDate'], 'version' => $_POST['versNum']]);
-		$manager->addVersion($addVersion);
+		$addVersion = new Version(['date' => $_POST['versDate'], 'version' => $_POST['versNum']]);
+		$listVersion = $manager->updateListVersion();
+		var_dump($listVersion);
+		// $manager->updateVersionById($addVersion);
 	}
 	// else{
 	// 	echo'formulaire vide';
@@ -26,10 +28,10 @@
 
 
 		<label for="versDate">Date</label>
-		<input type="date" name="versDate" min="1900" id="versDate" class="form-control text-center"/>
+		<input type="date" name="versDate" min="1900" id="versDate" value="<?= $listVersion['date']; ?>" class="form-control text-center"/>
 		
 		<label for="versNum">Numéro de version</label>
-		<input type="text" name="versNum" class="form-control" id="versNum"/>
+		<input type="text" name="versNum" class="form-control" id="versNum"  value="<?= $listVersion['version']; ?>"/>
 
 		<div class="row">
 			<!-- Cancel Button -->

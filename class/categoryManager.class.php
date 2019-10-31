@@ -68,7 +68,7 @@ public function getObjCategory(){
 public function updateById(Category $category){
 		$new_category = $this->db->prepare('UPDATE category SET /*id_category = :id_category,*/ type = :type WHERE id_category ='.$_GET['id']);
 		//var_dump($category->getId_category());
-		var_dump($new_category);
+
 		echo "la";
 /*		$new_category->bindValue(':id_category', $category->getId_category(), PDO::PARAM_INT);
 */		$new_category->bindValue(':type', $category->getType(), PDO::PARAM_STR);

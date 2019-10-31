@@ -30,11 +30,19 @@ public function deleteVersion($idVersion){
 	return $this;
 }
 
-//Fonction Getid
-// public function getId_category(){
-// 	return $this->db->query('SELECT category.id_category FROM category WHERE id ='.$category->getId_category())->fetch(PDO::FETCH_ASSOC);
+public function updateListVersion(){
+	return $this->db->query('SELECT version.date, version.version FROM version WHERE id_version ='.$_GET['id'])->fetch(PDO::FETCH_ASSOC);
+}
 
-// }
+// Update version function
+public function updateVersionById(Version $version){
+		$new_version = $this->db->prepare('UPDATE version SET version.date = :date, version.version = :version WHERE id_version ='.$_GET['id']);
+
+		$new_version->bindValue(':date', $version->getDate(), PDO::PARAM_STR);
+		$new_version->bindValue(':version', $version->getVersion(), PDO::PARAM_STR);
+		$new_versiony->execute();
+	
+		}
 
 // Object version list
 public function getObjVersion(){
