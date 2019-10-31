@@ -34,20 +34,20 @@
  
     
     ?>
-    <section class="border border-dark w-50 m-auto rounded shadow">
+    <section class="border border-dark w-75 m-auto rounded shadow">
         <table class="m-auto table table-striped table-hover">
             <thead class="thead-dark text-white font-weight-bold">
                 <th scope="col" class="p-3">Id_game</th>
-                <th scope="col" class="p-3 w-100">Titre</th>
-                <th scope="col" class="p-3 w-100">Description</th>
-                <th scope="col" class="p-3 w-100">Pegi</th>
-                <th scope="col" class="p-3 w-100">Lien Jeu</th>
-                <th scope="col" class="p-3 w-100">Id catégorie</th>
-                <th scope="col" class="p-3 w-100">Type</th>
-                <th scope="col" class="p-3 w-100">Id studio</th>
-                <th scope="col" class="p-3 w-100">Nom studio</th>
-                <th scope="col" class="p-3 w-100">Lien studio</th>
-                <th scope="col" class="p-3 text-center w-25">Editer</th>
+                <th scope="col" class="p-3 ">Titre</th>
+                <th scope="col" class="p-3 ">Description</th>
+                <th scope="col" class="p-3 ">Pegi</th>
+                <th scope="col" class="p-3 ">Lien Jeu</th>
+                <th scope="col" class="p-3 ">Id catégorie</th>
+                <th scope="col" class="p-3 ">Type</th>
+                <th scope="col" class="p-3 ">Id studio</th>
+                <th scope="col" class="p-3 ">Nom studio</th>
+                <th scope="col" class="p-3 ">Lien studio</th>
+                <th scope="col" class="p-3 text-center ">Editer</th>
             </thead>
 
         <?php 
