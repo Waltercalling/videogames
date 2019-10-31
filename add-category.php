@@ -31,7 +31,7 @@
 	<form class="border border-dark rounded bg-light p-5" action="" method="POST">
 		
 		<label for="catName">Nom de la catégorie</label>
-		<input type="text" name="catName" class="form-control" />
+		<input type="text" name="catName" class="form-control" id="catName"/>
 
 		<div class="row">
 			<!-- Cancel Button -->
