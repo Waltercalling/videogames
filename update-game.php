@@ -18,8 +18,9 @@
 
     <!-- ici il faut récupérer les infos étendues du jeu, et mettre en value etc... chaque champ -->
 
-    <!-- on n'a que l'id du jeu ! ça craint ! ça serait plus simple d'avoir l'objet => OBJECTIF OBJET -->
-    <!-- peut être avec un $_session[maj] = l'objet -->
+    <?php // récupération de l'id du jeu passé en get
+        $id_jeu = $GET['id_jeu'];
+    ?>
     <form class="border border-dark rounded bg-light p-5" action="" method="POST">
         <label for="title">TITRE :</label>
         <input id='title' name='title' type="text" class="form-control"/>
