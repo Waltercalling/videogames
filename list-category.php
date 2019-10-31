@@ -1,17 +1,9 @@
 <?php spl_autoload_register(function($class){require_once'class/'.$class.'.class.php'; }); ?>
-<!DOCTYPE html>
-<html lang="fr">
-<!-- Head load -->
-<?php include("inc/head.php"); ?>
-<title>Liste des catégories de jeux Vidéo</title>
-</head>
-<!-- Database connexion -->
-<?php include_once("inc/connect.php");?>
 
-<body>
-	<!-- Header -->
-	<?php include("inc/header.php"); ?>
-	<main>
+<?php require_once("inc/header.php"); ?>
+<!-- Database connexion -->
+<?php require_once("inc/connect.php");?>
+
 
 	<h1 class="text-center my-3">Liste des catégories</h1>
 	<?php $manager = new categoryManager($bdd); 
@@ -20,8 +12,7 @@
           $categorylist = $manager->getObjCategory();
 		  // $idcat = $manager->getId_category($listCategory);
          //  echo'<pre>';
-         // var_dump($categorylist);
-	?>
+         ?>
 
 <section class="border border-dark w-50 m-auto rounded shadow">
 	<table class="m-auto table table-striped table-hover">
@@ -47,12 +38,9 @@
 			<?php endforeach; ?>
 		</tbody>
 	</table>
-<section>
+</section>
 
 
 
 	<!-- Footer -->
-	<?php include("inc/footer.php"); ?>
-
-</body>
-</html>
+	<?php require_once("inc/footer.php"); ?>

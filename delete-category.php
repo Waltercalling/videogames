@@ -4,6 +4,5 @@ include_once("inc/connect.php");
 
 	$manager = new categoryManager($bdd);
 	$idCat = $_GET['id'];
-
 	$manager->deleteCategory($idCat);
 	header('Location:list-category.php');
