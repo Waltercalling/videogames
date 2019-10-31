@@ -25,7 +25,7 @@
 			
 		
 ?>
-		<input type="text" name="newCat" class="form-control" placeholder="<?= $value->getType();?>" /> <?php } ?>
+		<input type="text" name="newCat" class="form-control" value="<?= $value->getType();?>" /> <?php } ?>
 
 		<div class="row">
 			<!-- Cancel Button -->

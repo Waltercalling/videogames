@@ -36,7 +36,7 @@
 
 				<td class="text-right align-middle">
 					<div class="d-flex flex-lg-row justify-content-lg-around">
-						<div><a href="update-category.php?id=<?= $value['id_version']; ?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
+						<div><a href="update-version.php?id=<?= $value['id_version']; ?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
 						<div><a href="delete-version.php?id=<?= $value['id_version']; ?>"><i class="delete fas fa-trash-alt" title="Supprimer"></i></a></div>
 					</div>
 				</td>
