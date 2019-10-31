@@ -7,4 +7,4 @@
             $manager = new StudioManager($bdd);
             $manager->deleteStudio($studio);
             
-            
+            header('location: list-studio.php');
