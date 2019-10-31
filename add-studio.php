@@ -10,7 +10,7 @@
 
        
 
-            if(isset($_POST['studio']) && isset($_POST['link'])){
+            if(isset($_POST['studio']) && isset($_POST['link']) && preg_match('/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/', $_POST['link'])){
                 $manager = new StudioManager($bdd);
                 $studio = new Studio(['name'=>$_POST['studio'], 'link'=>$_POST['link']]);
                 $manager->addStudio($studio);
