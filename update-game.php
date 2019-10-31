@@ -53,13 +53,13 @@
         // print_r($ObjectById);
         // echo "</pre>";
         
-
+        //echo $tabById['title'];
         
 
     ?>
     <form class="border border-dark rounded bg-light p-5" action="" method="POST">
         <label for="title">TITRE :</label>
-        <?php echo"<input id='title' name='title' type='text' class='form-control' value= ".$tabById['title'];?>
+        <?php echo"<input id='title' name='title' type='text' class='form-control' value= '".$tabById['title']."' />";?>
         <br/>
 
         <label for="description">DESCRIPTION</label>
