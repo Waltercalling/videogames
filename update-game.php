@@ -41,12 +41,12 @@
 
 
         
-        // dans la classe gamemanager, ajouter une méthode qui renvoie l'objet correspondant à l'id
+        // dans la classe gamemanager, ajouter une méthode qui renvoie le tableau correspondant à l'id
         $tabById = $gm-> getTabById($id_jeu);
-
-        echo "<pre>";
-        print_r($tabById);
-        echo "</pre>";
+        // echo $tabById['pegi'];
+        // echo "<pre>";
+        // print_r($tabById);
+        // echo "</pre>";
 
         //$ObjectById = $gm-> getObjectById($id_jeu);
         // echo "<pre>";
@@ -59,7 +59,7 @@
     ?>
     <form class="border border-dark rounded bg-light p-5" action="" method="POST">
         <label for="title">TITRE :</label>
-        <input id='title' name='title' type="text" class="form-control" value=<?=$tabById['title']?>/>
+        <?php echo"<input id='title' name='title' type='text' class='form-control' value= ".$tabById['title'];?>
         <br/>
 
         <label for="description">DESCRIPTION</label>
@@ -67,11 +67,11 @@
         <br/>
 
         <label for="pegi">PEGI</label>
-        <input id='pegi' name='pegi' type="number" class="form-control" value=<?=$tabById['pegi']?>/>
+        <?php echo"<input id='pegi' name='pegi' type='number' class='form-control' value=".$tabById['pegi'];?>
         <br/>
 
         <label for="link">LIEN</label>
-        <input id='link' name='link' type="text" class="form-control" value=<?=$tabById['link']?>/>
+        <?php echo"<input id='link' name='link' type='text' class='form-control' value= ".$tabById['link']?>
         <br/>
 
         <!-- ajouter les clés étrangères -->
@@ -94,27 +94,43 @@
         // echo"</pre>";
         
         ?>
-
+        <!-- category en mode update -->
+        <!-- il faut mettre en selected true l'option qui correspond à l'id_category -->
         <label for="category">Choisissez la catégorie</label>
 
         <select name="category" id="category" class="form-control">
-            <option value="" selected>--Catégorie--</option>
             <?php
             foreach ($listCat as $idList => $catObj){
-                echo '<option value="'.$catObj->getId_category().'">'.$catObj->getType().'</option>';
+
+                if ($catObj->getId_category() == $tabById['id_category']){
+                    echo '<option selected value="'.$catObj->getId_category().'">'.$catObj->getType().'</option>';
+                }
+                else{
+                    echo '<option value="'.$catObj->getId_category().'">'.$catObj->getType().'</option>';
+                }
+                
             }
             ?>
             
             
         </select>
         <br/>
-        <label for="studio">Choisissez l'éditeur</label>
 
+        <!-- studio en mode update -->
+        <!-- il faut mettre en selected true l'option qui correspond à l'id_studio -->
+        <label for="studio">Choisissez l'éditeur</label>
+            <!-- <?php print_r($listEd);?> -->
         <select name="studio" id="studio" class="form-control">
-            <option value="" selected>--Editeur--</option>
+            
             <?php
+
             foreach ($listEd as $idList => $EdObj){
-                echo '<option value="'.$EdObj->getId_studio().'">'.$EdObj->getName().'</option>';
+                if ($EdObj->getId_studio() == $tabById['id_studio']){
+                    echo '<option selected value="'.$EdObj->getId_studio().'">'.$EdObj->getName().'</option>';
+                }
+                else{
+                    echo '<option value="'.$EdObj->getId_studio().'">'.$EdObj->getName().'</option>';
+                }
             }
             ?>
             
@@ -124,7 +140,7 @@
         <div class="row">
 			<!-- Cancel Button -->
 			<div class="col-12 col-lg-4 mb-2 my-2">
-				<a title="Annuler" href="index.php" type="button" name="back" class="cancel btn btn-danger shadow-sm border border-dark w-100">Annuler</a>
+				<a title="Annuler" href="list-game.php" type="button" name="back" class="btn btn-danger shadow-sm border border-dark w-100">Annuler</a>
 			</div>
 			<!-- Validate Button -->
 			<div class="col-12 col-lg-6 offset-lg-2 my-2">
@@ -147,7 +163,10 @@ if (isset($_POST['title']) && !empty($_POST['title'])){
     // echo"</pre>";
 
     $game= New Game($gameIn); 
-    $gm->addGame($game);
+    echo "<pre>";
+    print_r($game);
+    echo "</pre>";
+    $gm->updateGame($game, $id_jeu);
     header('Location:list-game.php');
     exit;
 }

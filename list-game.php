@@ -52,12 +52,8 @@
             foreach ($list as $key => $game){
                 echo'<tr>';
                 foreach($game as $champ => $valeur){
-                    // $method = 'get'.ucfirst($champ);
                         ?> <!-- les champs -->
-                        
                             <td class="p-3"><?=$valeur?></td>
-                        
-                        
                         <?php
                 }
                 ?><!--  modifier et supprimer -->

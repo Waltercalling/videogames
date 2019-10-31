@@ -79,11 +79,19 @@ Class GameManager{
     
         }
 
-    public function updateGame($game){
-        // on récupère le connecteur à la base de donnée
-        $db = $this->db;
+    public function updateGame($game, $id_jeu){
+         // on récupère le connecteur à la base de données
+         $db = $this->db;
+         $sql = "UPDATE game
+                  SET game.title ='".$game->getTitle()."' , game.description ='".$game->getDescription()."' , game.pegi =".$game->getPegi()." , game.link ='".$game->getLink()."' , game.id_category =".$game->getId_category()." , game.id_studio = ".$game->getId_studio()." WHERE id_game=".$id_jeu;
+             
+             echo $sql;
+             if (!empty($db)){
+             $req = $db->prepare($sql);
+             $req->execute();
     
         }
+    }
 
 
 
