@@ -115,7 +115,7 @@ Class GameManager{
                 $req->execute();
                 $gameObject =[];
                 while ($data = $req->fetch(PDO::FETCH_ASSOC)){
-                    $gameObjet[] = new Category($data);
+                    $gameObjet[] = new Game($data);
                   }
                 return $gameObjet;
             }
