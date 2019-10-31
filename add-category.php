@@ -1,11 +1,5 @@
 <?php spl_autoload_register(function($class){require_once'class/'.$class.'.class.php'; }); ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<!-- Head load -->
-<?php include_once("inc/head.php"); ?>
-<title>Ajouter une catégorie</title>
-</head>
 <!-- Database connexion -->
 <?php include_once("inc/connect.php");?>
 
@@ -46,8 +40,6 @@
 
 	</form>
 </section>
+
 	<!-- Footer -->
 	<?php include_once("inc/footer.php"); ?>
-
-</body>
-</html>
