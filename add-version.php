@@ -13,7 +13,7 @@
 <section class="w-50 m-auto">
 	<?php
 	if (isset($_POST['version']) && !empty($_POST['version'])){
-		$manager = new versionManager($bdd);
+		$manager = new VersionManager($bdd);
 		$addVersion = new Version(['id_game' => $_POST['game'], 'id_device' => $_POST['version'], 'date' => $_POST['versDate'], 'version' => $_POST['versNum']]);
 		$manager->addVersion($addVersion);
 	}

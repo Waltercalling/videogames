@@ -20,7 +20,7 @@ public function addVersion(Version $version) {
 	}
 
 public function listVersion(){
-	return $this->db->query('SELECT  FROM version')->fetchAll(PDO::FETCH_ASSOC);
+	return $this->db->query('SELECT * FROM version')->fetchAll(PDO::FETCH_ASSOC);
 }
 
 // // Delete function 
@@ -44,7 +44,7 @@ public function listVersion(){
 
 public function getObjVersion(){
     $versionObjet = [];
-    $version = $this->db->query('SELECT  FROM version');
+    $version = $this->db->query('SELECT * FROM version');
     while ($data = $version->fetch(PDO::FETCH_ASSOC)){
       $versionObjet[] = new Version($data);
     }
