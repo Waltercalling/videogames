@@ -26,29 +26,18 @@
 
 
 		 <?php
-        // récupérer la liste des catégories et la liste des editeurs, et les mettre dans un select
-        
-        // je rapatrie ici un TABLEAU ASSOCIATIF (méthode listcategory)
-        $cm = new DeviceManager($bdd);
-        $listDevice = $cm->readObj();
-        // echo"<pre>";
-        // print_r($listCat);
-        // echo"</pre>";
 
-        
-        // je rapatrie ici un TABLEAU ASSOCIATIF D'OBJETS(méthode getShowItems)
-        // $em = new StudioManager($bdd);
-        // $listEd = $em->getShowItems();
-        // echo"<pre>";
-        // print_r($listEd);
-        // echo"</pre>";
+        $dm = new DeviceManager($bdd);
+        $listDevice = $dm->readObj();
+
+
+        $gm = new GameManager($bdd);
+        $listGame = $gm->getObjectGame();
+
         
         ?>
 
-
-
 		<label for="version">Choisissez le support</label>
-
         <select name="version" id="version" class="form-control">
             <option value="" selected>--Support--</option>
             <?php
@@ -56,9 +45,18 @@
                 echo '<option value="'.$device->getId_device().'">'.$device->getName().'</option>';
             }
             ?>
-            
-            
         </select>
+
+        <label for="game">Choisissez le jeu</label>
+        <select name="game" id="game" class="form-control">
+            <option value="" selected>--Jeu--</option>
+            <?php
+            foreach ($listGame as $idList => $game){
+                echo '<option value="'.$game->getId_game().'">'.$game->getTitle().'</option>';
+            }
+            ?>
+        </select>
+
 		
 		<label for="versName">Numéro de version</label>
 		<input type="text" name="versName" class="form-control" id="versName"/>
