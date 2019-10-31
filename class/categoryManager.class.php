@@ -30,7 +30,7 @@ public function deleteCategory(Category $category){
 	return $this;
 }
 
-// //Fonction Getid
+//Fonction Getid
 // public function getId_category(){
 // 	return $this->db->query('SELECT category.id_category FROM category WHERE id ='.$category->getId_category())->fetch(PDO::FETCH_ASSOC);
 

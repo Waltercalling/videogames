@@ -31,7 +31,7 @@
 	          <a class="dropdown-item" href="list-category.php" title="Liste des catégories"><i class="fas fa-caret-right pr-3"></i>Liste</a>
 	        </div>
 
-	        <!-- Menu Support -->
+	        <!-- Menu Device -->
 	       <li class="nav-item dropdown px-4">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" title="Menu des versions" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				Support

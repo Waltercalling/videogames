@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
 	//Check confirmation click for delete button
-	$('.confirmation').on('click', function () {
+	$('.delete').on('click', function () {
 		return confirm ('Voulez-vous vraiment supprimer ?');
 	});
 
