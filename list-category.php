@@ -17,10 +17,10 @@
 	<?php $manager = new categoryManager($bdd); 
           $listCategory = $manager->listCategory();
           // $idCat = $manager->getId_category();
-          $categorydel = $manager->getObjCategory();
+          $categorylist = $manager->getObjCategory();
 		  // $idcat = $manager->getId_category($listCategory);
-         //  echo'<pre>';
-         // var_dump($categorydel);
+          echo'<pre>';
+         var_dump($categorylist);
 	?>
 
 <section class="border border-dark w-50 m-auto rounded shadow">
@@ -33,14 +33,14 @@
 		</thead>
 
 		<tbody>
-			<?php foreach ($listCategory as $key => $value): ?>
+			<?php foreach ($categorylist as $key => $value): ?>
 			<tr>
-				<td class="p-3 font-weight-bold" scope="row"><?= $value['id_category']; ?></td>
-				<td class="p-3"><?= $value['type']; ?></td>
+				<td class="p-3 font-weight-bold" scope="row"><?= $value->getId_category(); ?></td>
+				<td class="p-3"><?= $value->getType(); ?></td>
 				<td class="text-right align-middle">
 					<div class="d-flex flex-lg-row justify-content-lg-around">
-						<div><a class="cancel" href="update-category.php?id=<?= $value['id_category'];?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
-						<div><a href="delete-category.php?id=<?= $value['id_category'];?>"><i class="delete fas fa-trash-alt" title="Supprimer"></i></a></div>
+						<div><a class="cancel" href="update-category.php?id=<?= $value->spl_object_id(); ?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
+						<div><a href="delete-category.php?id="><i class="delete fas fa-trash-alt" title="Supprimer"></i></a></div>
 					</div>
 				</td>
 			</tr>
