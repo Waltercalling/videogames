@@ -12,7 +12,7 @@
 	<?php include("inc/header.php"); ?>
 	<main>
 
-	<h1>Liste des Jeux</h1>
+	<h1 class="text-center my-3">Liste des Jeux</h1>
 
     <?php 
     spl_autoload_register(function($classe){        
@@ -33,46 +33,56 @@
     // echo "<pre>";
     // print_r($list);
     // echo "</pre>";
- foreach ($list as $champ => $valeur)
+ //sforeach ($list as $champ => $valeur)
 
 
 
  
     //$game->getTabListGame();
     ?>
-<table style="width:100%">
-    <tr> 
-        <th style="position:sticky; top:0; background-color:yellow;">Id_game</th>
-        <th style="position:sticky; top:0; background-color:yellow;">Titre</th>
-        <th style="position:sticky; top:0; background-color:yellow;">Description</th>
-        <th style="position:sticky; top:0; background-color:yellow;">Pegi</th>
-        <th style="position:sticky; top:0; background-color:yellow;">Lien Jeu</th>
-        <th style="position:sticky; top:0; background-color:yellow;">Id catégorie</th>
-        <th style="position:sticky; top:0; background-color:yellow;">Type</th>
-        <th style="position:sticky; top:0; background-color:yellow;">Id studio</th>
-        <th style="position:sticky; top:0; background-color:yellow;">Nom studio</th>
-        <th style="position:sticky; top:0; background-color:yellow;">Lien studio</th>
-    </tr>
+    <section class="border border-dark w-50 m-auto rounded shadow">
+        <table class="m-auto table table-striped table-hover">
+            <thead class="thead-dark text-white font-weight-bold">
+                <th scope="col" class="p-3">Id_game</th>
+                <th scope="col" class="p-3 w-100">Titre</th>
+                <th scope="col" class="p-3 w-100">Description</th>
+                <th scope="col" class="p-3 w-100">Pegi</th>
+                <th scope="col" class="p-3 w-100">Lien Jeu</th>
+                <th scope="col" class="p-3 w-100">Id catégorie</th>
+                <th scope="col" class="p-3 w-100">Type</th>
+                <th scope="col" class="p-3 w-100">Id studio</th>
+                <th scope="col" class="p-3 w-100">Nom studio</th>
+                <th scope="col" class="p-3 w-100">Lien studio</th>
+                <th scope="col" class="p-3 text-center w-25">Editer</th>
+            </thead>
 
-<?php 
-    foreach ($list as $game){
-        
-        echo'<tr>';
-            foreach($game as $champ => $valeur){
+        <?php 
+            foreach ($list as $game){
+                echo'<tr>';
+                foreach($game as $champ => $valeur){
+                    // $method = 'get'.ucfirst($champ);
+                        ?> <!-- les champs -->
+                        
+                            <td class="p-3"><?=$valeur?></td>
+                        
+                        
+                        <?php
+                }
+                ?><!--  modifier et supprimer -->
+                        <td class="text-right align-middle">
+                            <div class="d-flex flex-lg-row justify-content-lg-around">
+                                <div><a class="cancel" href="update-game.php?id="><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
+                                <div><a href="delete-game.php?id="><i class="delete fas fa-trash-alt" title="Supprimer"></i></a></div>
+                            </div>
+                            
+                        </td>
+                <?php
+                echo'</tr>';
+                }?>    
 
-               // $method = 'get'.ucfirst($champ);
-                
-                echo '<td>'.$valeur.'</td>';
-            }
-    
-        echo'</tr>';
-}
-    
-    
-?>    
 
-
-</table>
+        </table>
+    </section>
 
 
 	<!-- Footer -->

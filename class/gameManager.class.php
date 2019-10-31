@@ -37,7 +37,7 @@ Class GameManager{
     // on récupère le connecteur à la base de donnée
         $db = $this->db;
         //VAR_DUMP($db);
-        $tabvar = $game->getTabListGame();
+        //$tabvar = $game->getTabListGame();
         // echo '<pre>';
         // print_r ($tabvar);
         // echo '</pre>';
@@ -101,6 +101,24 @@ Class GameManager{
             $games = $req->fetchAll(PDO::FETCH_ASSOC); 
             return $games;
         }
+    }
+
+        public function getObjectGame(){
+            $db = $this->db;
+            $sql = "SELECT game.id_game,game.title, game.description, game.pegi, game.link AS gamelink, game.id_category, category.type, game.id_studio,  studio.name, studio.link AS studiolink FROM game
+                    INNER JOIN category ON game.id_category = category.id_category
+                    INNER JOIN studio ON game.id_studio = studio.id_studio";
+            // echo "<br/>".$sql;
+            
+            if (!empty($db)){
+                $req = $db->prepare($sql);
+                $req->execute();
+                $gameObject =[];
+                while ($data = $req->fetch(PDO::FETCH_ASSOC)){
+                    $gameObjet[] = new Category($data);
+                  }
+                return $gameObjet;
+            }
 
         
         
