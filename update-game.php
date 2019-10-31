@@ -14,9 +14,12 @@
 	<?php include("inc/header.php"); ?>
 
 
-	<h1 class="text-center my-3">Ajouter un Jeu</h1>
+	<h1 class="text-center my-3">Modifier les données d'un Jeu</h1>
 
-    
+    <!-- ici il faut récupérer les infos étendues du jeu, et mettre en value etc... chaque champ -->
+
+    <!-- on n'a que l'id du jeu ! ça craint ! ça serait plus simple d'avoir l'objet => OBJECTIF OBJET -->
+    <!-- peut être avec un $_session[maj] = l'objet -->
     <form class="border border-dark rounded bg-light p-5" action="" method="POST">
         <label for="title">TITRE :</label>
         <input id='title' name='title' type="text" class="form-control"/>
