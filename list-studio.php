@@ -38,11 +38,6 @@
                         <td><?= $value->getLink(); ?></td>
                         <td><a class="cancel" href="deleteStudio.php?id=<?= $value->getId_studio();?>"><i class="delete fas fa-trash-alt" title="Supprimer"></i></a></td>
                         <td><a class="" href="upgradeStudio.php?id=<?= $value->getId_studio();?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></td>
-
-                        <div class="d-flex flex-lg-row justify-content-lg-around">
-                        <div><a class="cancel" href="update-category.php?id=<?= $value['id_category'];?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
-                        <div><a href="delete-category.php?id=<?= $value['id_category'];?>"><i class="delete fas fa-trash-alt" title="Supprimer"></i></a></div>
-                    </div>
                     </tr>
                         <?php endforeach;?>
             </tbody>
