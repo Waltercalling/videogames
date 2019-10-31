@@ -17,6 +17,7 @@ public function addVersion(Version $version) {
 	 $add_version->execute();
 	  // Close cursor after category insert
 	 $add_version->closeCursor();
+	 header('Location:list-version.php');
 	}
 
 public function listVersion(){
@@ -35,20 +36,23 @@ public function listVersion(){
 
 // }
 
-// public function getId($id){
-//     $id = (int) $id;
-//     $q = $this->db->query('SELECT id_category FROM category WHERE id = '. $id);
-//     $catId = $q->fetch(PDO::FETCH_ASSOC);
-//     return ($catId); 
-//     }
-
+// Object version list
 public function getObjVersion(){
-    $versionObjet = [];
-    $version = $this->db->query('SELECT * FROM version');
+    $versionObject = [];
+    $version = $this->db->prepare('SELECT version.id_version, version.id_game, version.id_device, version.date, version.version, game.title, device.name FROM version
+								INNER JOIN game ON version.id_game = game.id_game
+								INNER JOIN device ON version.id_device = device.id_device');
+    $version->execute();
     while ($data = $version->fetch(PDO::FETCH_ASSOC)){
-      $versionObjet[] = new Version($data);
+      $versionObject[] = new Version($data);
     }
-    return $versionObjet;
+    return $versionObject;
   }
 
+// Table version list
+public function getListVersion(){
+    return $this->db->query('SELECT version.id_version, version.id_game, version.id_device, version.date, version.version, game.title, device.name FROM version
+								INNER JOIN game ON version.id_game = game.id_game
+								INNER JOIN device ON version.id_device = device.id_device')->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
