@@ -34,7 +34,7 @@
                     <div class="row">
                         <!-- Cancel Button -->
                         <div class="col-12 col-lg-4 mb-2 my-2">
-                            <a title="Annuler" href="index.php" type="button" name="back" class="cancel btn btn-danger shadow-sm border border-dark w-100"/>Annuler</a>
+                            <a title="Annuler" href="index.php" type="button" name="back" class="btn btn-danger shadow-sm border border-dark w-100"/>Annuler</a>
                         </div>
                         <!-- Validate Button -->
                         <div class="col-12 col-lg-6 offset-lg-2 my-2">

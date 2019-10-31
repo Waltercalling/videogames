@@ -36,7 +36,7 @@
                         <td><?= $value->getId_studio(); ?></td>
                         <td><?= $value->getName(); ?></td>
                         <td><?= $value->getLink(); ?></td>
-                        <td><a class="cancel" href="deleteStudio.php?id=<?= $value->getId_studio();?>"><i class="delete fas fa-trash-alt" title="Supprimer"></i></a></td>
+                        <td><a href="deleteStudio.php?id=<?= $value->getId_studio();?>"><i class="delete fas fa-trash-alt" title="Supprimer"></i></a></td>
                         <td><a class="" href="upgradeStudio.php?id=<?= $value->getId_studio();?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></td>
                     </tr>
                         <?php endforeach;?>
