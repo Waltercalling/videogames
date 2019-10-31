@@ -65,7 +65,7 @@
                 ?><!--  modifier et supprimer -->
                         <td class="text-right align-middle">
                             <div class="d-flex flex-lg-row justify-content-lg-around">
-                                <div><a class="cancel" href="update-game.php?id=<?=$game['id_game']?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
+                                <div><a href="update-game.php?id=<?=$game['id_game']?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
                                 <div><a href="delete-game.php?id=<?=$game['id_game']?>"><i class="delete fas fa-trash-alt" title="Supprimer"></i></a></div>
                             </div>
                             
