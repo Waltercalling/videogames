@@ -134,10 +134,10 @@ Class GameManager{
     }
 
 
-    public function getObjectById($id){
+    public function getTabById($id){
         // on récupère le connecteur à la base de données
         $db = $this->db;
-        $sql = "SELECT game.id_game,game.title, game.description, game.pegi, game.link, game.id_category
+        $sql = "SELECT game.id_game,game.title, game.description, game.pegi, game.link, game.id_category, game.id_studio
                 FROM game
                 WHERE id_game=".$id;;
         if (!empty($db)){
@@ -149,6 +149,24 @@ Class GameManager{
         }
     }
 
+
+    public function getObjectById($id){
+        // on récupère le connecteur à la base de données
+        $db = $this->db;
+        $sql = "SELECT game.id_game,game.title, game.description, game.pegi, game.link, game.id_category, game.id_studio
+                FROM game
+                WHERE id_game=".$id;;
+        if (!empty($db)){
+            $req = $db->prepare($sql);
+            $req->execute();
+
+            $gameWithId = [];
+            while ($data = $req->fetch(PDO::FETCH_ASSOC)){
+                $gameWithId[] = new Game($data);
+            }
+            return $gameWithId;
+        }
+    }
 
     // Delete function 
     public function deleteGame($idGame){

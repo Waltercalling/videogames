@@ -28,7 +28,7 @@
         });
         // récupération de l'id du jeu passé en get
         $id_jeu = $_GET['id'];
-        echo $id_jeu;
+        // echo $id_jeu;
         
 
 
@@ -36,33 +36,42 @@
         // pour ça :
         // créer un nouvel objet gamemanager lié à la base de donnée
         $gm = new gameManager($bdd);
-        $objectId = $gm-> getObjectById($id_jeu);
+        
+        
+
+
+        
+        // dans la classe gamemanager, ajouter une méthode qui renvoie l'objet correspondant à l'id
+        $tabById = $gm-> getTabById($id_jeu);
+
         echo "<pre>";
-        print_r($objectId);
+        print_r($tabById);
         echo "</pre>";
 
+        //$ObjectById = $gm-> getObjectById($id_jeu);
+        // echo "<pre>";
+        // print_r($ObjectById);
+        // echo "</pre>";
+        
 
-        // faire update de l'id
-        // dans la classe gamemanager, ajouter une méthode qui renvoie l'objet correspondant à l'id
-
-        // puis l'unsetter 
+        
 
     ?>
     <form class="border border-dark rounded bg-light p-5" action="" method="POST">
         <label for="title">TITRE :</label>
-        <input id='title' name='title' type="text" class="form-control"/>
+        <input id='title' name='title' type="text" class="form-control" value=<?=$tabById['title']?>/>
         <br/>
 
         <label for="description">DESCRIPTION</label>
-        <textarea id='description' name='description' class="form-control"></textarea>
+        <textarea id='description' name='description' class="form-control" ><?=$tabById['description']?></textarea>
         <br/>
 
         <label for="pegi">PEGI</label>
-        <input id='pegi' name='pegi' type="number" class="form-control"/>
+        <input id='pegi' name='pegi' type="number" class="form-control" value=<?=$tabById['pegi']?>/>
         <br/>
 
         <label for="link">LIEN</label>
-        <input id='link' name='link' type="text" class="form-control"/>
+        <input id='link' name='link' type="text" class="form-control" value=<?=$tabById['link']?>/>
         <br/>
 
         <!-- ajouter les clés étrangères -->

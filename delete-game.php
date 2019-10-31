@@ -7,4 +7,6 @@
         $gm = new gameManager($bdd);
         $idGame = $_GET['id'];
         $gm->deleteGame($idGame);
+
+        
         header('Location:list-game.php');
