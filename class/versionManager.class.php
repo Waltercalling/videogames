@@ -24,11 +24,11 @@ public function listVersion(){
 	return $this->db->query('SELECT * FROM version')->fetchAll(PDO::FETCH_ASSOC);
 }
 
-// // Delete function 
-// public function deleteVersion($idCat){
-// 	$del_Category = $this->db->exec('DELETE FROM category WHERE id_category ='.$idCat);
-// 	return $this;
-// }
+// Delete function 
+public function deleteVersion($idVersion){
+	$del_Version = $this->db->exec('DELETE FROM version WHERE id_version ='.$idVersion);
+	return $this;
+}
 
 //Fonction Getid
 // public function getId_category(){
