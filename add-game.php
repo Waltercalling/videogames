@@ -1,25 +1,22 @@
-<!DOCTYPE html>
-<html lang="fr">
-<!-- Head load -->
-<?php include("inc/head.php"); ?>
-<title>Ajout de jeu video</title>
-</head>
-<!-- Database connexion -->
-<?php include_once("inc/connect.php");?>
 
-<body>
-	<!-- Header -->
-	<?php include("inc/header.php"); ?>
-	<main>
-
-	<h1 class="text-center my-3">Ajouter un Jeu</h1>
-
-    <?php 
+<?php 
     spl_autoload_register(function($classe){        
         require_once ('class/'.$classe.'.class.php');
     });
    
     ?>
+
+<!-- Database connexion -->
+<?php include_once("inc/connect.php");?>
+
+
+	<!-- Header -->
+	<?php include("inc/header.php"); ?>
+
+
+	<h1 class="text-center my-3">Ajouter un Jeu</h1>
+
+    
     <form class="border border-dark rounded bg-light p-5" action="" method="POST">
         <label for="title">TITRE :</label>
         <input id='title' name='title' type="text" class="form-control"/>
@@ -40,13 +37,49 @@
         <!-- ajouter les clés étrangères -->
         <?php
         // récupérer la liste des catégories et la liste des editeurs, et les mettre dans un select
+        
+        // je rapatrie ici un TABLEAU ASSOCIATIF (méthode listcategory)
         $cm = new categoryManager($bdd);
-        $listcat = $cm->listCategory();
-        echo"<pre>";
-        print_r($listcat);
-        echo"</pre>";
+        $listCat = $cm->listCategory();
+        // echo"<pre>";
+        // print_r($listCat);
+        // echo"</pre>";
+
+        
+        // je rapatrie ici un TABLEAU ASSOCIATIF D'OBJETS(méthode getShowItems)
+        $em = new studioManager($bdd);
+        $listEd = $em->getShowItems();
+        // echo"<pre>";
+        // print_r($listEd);
+        // echo"</pre>";
         
         ?>
+
+        <label for="category">Choisissez la catégorie</label>
+
+        <select name="category" id="category" class="form-control">
+            <option value="" selected>--Catégorie--</option>
+            <?php
+            foreach ($listCat as $idList => $catTab){
+                echo '<option value="'.$catTab['id_category'].'">'.$catTab['type'].'</option>';
+            }
+            ?>
+            
+            
+        </select>
+        <br/>
+        <label for="editor">Choisissez l'éditeur</label>
+
+        <select name="editor" id="editor" class="form-control">
+            <option value="" selected>--Editeur--</option>
+            <?php
+            foreach ($listEd as $idList => $EdObj){
+                echo '<option value="'.$EdObj->getId_studio().'">'.$EdObj->getName().'</option>';
+            }
+            ?>
+            
+            
+        </select>
 
         <div class="row">
 			<!-- Cancel Button -->
@@ -91,5 +124,3 @@ if (isset($_POST['title']) && !empty($_POST['title'])){
 	<!-- Footer -->
 	<?php include("inc/footer.php"); ?>
 
-</body>
-</html>
