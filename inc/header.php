@@ -37,7 +37,16 @@
 			<li class="nav-item active px-5">
 				<a class="nav-link" href="index.php" title="Retour à l'accueil"><i class="fas fa-home pr-3"></i>Accueil</a>
 			</li>
-
+			<!-- Menu Version -->
+			<li class="nav-item dropdown px-4">
+				<a class="nav-link dropdown-toggle" title="Menu des jeux" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Version
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" href="add-version.php"><i class="fas fa-caret-right pr-3"></i>Ajouter</a>
+				<a class="dropdown-item" href="list-version.php"><i class="fas fa-caret-right pr-3"></i>Liste</a>
+				</div>
+			</li>
 			<!-- Menu Game -->
 			<li class="nav-item dropdown px-4">
 				<a class="nav-link dropdown-toggle" title="Menu des jeux" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
