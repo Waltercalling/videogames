@@ -73,6 +73,7 @@ public function updateById(Category $category){
 /*		$new_category->bindValue(':id_category', $category->getId_category(), PDO::PARAM_INT);
 */		$new_category->bindValue(':type', $category->getType(), PDO::PARAM_STR);
 		$new_category->execute();
+		header('Location:list-category.php');
 	
 		}
 
