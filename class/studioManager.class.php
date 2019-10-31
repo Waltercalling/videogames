@@ -36,15 +36,15 @@ class StudioManager{
 
     /**********************************CREATION DE LA FONCTION SUPPRIMER***** *********/
 
-    public function deleteStudio(Studio $studio){
-        $this->bdd->exec("DELETE FROM studio WHERE id_studio = ".$studio->getId_studio());
+    public function deleteStudio($studio){
+        $this->bdd->exec("DELETE FROM studio WHERE id_studio = ".$studio);
     }
 
 
-    public function getStudiobyId($id_studio){
-        $donnes = $this->bdd->exec("SELECT * FROM studio WHERE id_studio =" .$id_studio);
+    // public function getStudiobyId($id_studio){
+    //     $donnes = $this->bdd->exec("SELECT * FROM studio WHERE id_studio =" .$id_studio);
         
-            }
+    //         }
     }
 
 
