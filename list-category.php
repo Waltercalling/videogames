@@ -30,7 +30,7 @@
 				<td class="p-3"><?= $value->getType(); ?></td>
 				<td class="text-right align-middle">
 					<div class="d-flex flex-lg-row justify-content-lg-around">
-						<div><a class="cancel" href="update-category.php?id=<?= $value->getId_category(); ?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
+						<div><a href="update-category.php?id=<?= $value->getId_category(); ?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
 						<div><a href="delete-category.php?id=<?= $value->getId_category(); ?>"><i class="delete fas fa-trash-alt" title="Supprimer"></i></a></div>
 					</div>
 				</td>
