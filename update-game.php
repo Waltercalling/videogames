@@ -27,8 +27,8 @@
             require_once ('class/'.$classe.'.class.php');
         });
         // récupération de l'id du jeu passé en get
-        $id_jeu = $_GET['id'];
-        // echo $id_jeu;
+        $id_game = $_GET['id'];
+        // echo $id_game;
         
 
 
@@ -42,13 +42,13 @@
 
         
         // dans la classe gamemanager, ajouter une méthode qui renvoie le tableau correspondant à l'id
-        $tabById = $gm-> getTabById($id_jeu);
+        $tabById = $gm-> getTabById($id_game);
         // echo $tabById['pegi'];
         // echo "<pre>";
         // print_r($tabById);
         // echo "</pre>";
 
-        //$ObjectById = $gm-> getObjectById($id_jeu);
+        //$ObjectById = $gm-> getObjectById($id_game);
         // echo "<pre>";
         // print_r($ObjectById);
         // echo "</pre>";
@@ -102,10 +102,11 @@
             <?php
             foreach ($listCat as $idList => $catObj){
 
-                if ($catObj->getId_category() == $tabById['id_category']){
+                if ($catObj->getId_category() == $tabById['id_category']){  // si égalité entre l'id de la catégorie dans la liste, et la clé étrangère id_category du jeu , option en selected
                     echo '<option selected value="'.$catObj->getId_category().'">'.$catObj->getType().'</option>';
                 }
-                else{
+                else{ // sinon option normale
+
                     echo '<option value="'.$catObj->getId_category().'">'.$catObj->getType().'</option>';
                 }
                 
@@ -125,10 +126,10 @@
             <?php
 
             foreach ($listEd as $idList => $EdObj){
-                if ($EdObj->getId_studio() == $tabById['id_studio']){
+                if ($EdObj->getId_studio() == $tabById['id_studio']){  // si correspondance entre l'id du studio dans la liste, et la clé étrangère id_studio du jeu , option en selected
                     echo '<option selected value="'.$EdObj->getId_studio().'">'.$EdObj->getName().'</option>';
                 }
-                else{
+                else{ // sinon option normale
                     echo '<option value="'.$EdObj->getId_studio().'">'.$EdObj->getName().'</option>';
                 }
             }
@@ -166,7 +167,7 @@ if (isset($_POST['title']) && !empty($_POST['title'])){
     echo "<pre>";
     print_r($game);
     echo "</pre>";
-    $gm->updateGame($game, $id_jeu);
+    $gm->updateGame($game, $id_game);
     header('Location:list-game.php');
     exit;
 }
