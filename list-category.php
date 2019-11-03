@@ -19,7 +19,8 @@
 		<thead class="thead-dark text-white font-weight-bold">
 			<th scope="col" class="p-3">Id</th>
 			<th scope="col" class="p-3 w-100">Catégorie</th>
-			<th scope="col" class="p-3 text-center"></th>
+			<th scope="col" class="text-right p-3">Modifier</th>
+            <th scope="col" class="text-right p-3">Supprimer</th>
 
 		</thead>
 
@@ -28,13 +29,8 @@
 			<tr>
 				<td class="p-3 font-weight-bold" scope="row"><?= $value->getId_category(); ?></td>
 				<td class="p-3"><?= $value->getType(); ?></td>
-				<td class="text-right align-middle">
-					<div class="d-flex flex-lg-row justify-content-lg-around">
-
-						<div><a href="update-category.php?id=<?= $value->getId_category(); ?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
-						<div><a href="delete-category.php?id=<?= $value->getId_category(); ?>"><i class="delete fas fa-trash-alt" title="Supprimer"></i></a></div>
-					</div>
-				</td>
+				<td class="text-right align-middle"><a href="update-category.php?id=<?= $value->getId_category(); ?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></td>
+				<td class="text-right align-middle"><a href="delete-category.php?id=<?= $value->getId_category(); ?>"><i class="delete fas fa-trash-alt" title="Supprimer"></i></a></td>
 			</tr>
 			<?php endforeach; ?>
 		</tbody>

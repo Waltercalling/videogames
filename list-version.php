@@ -21,7 +21,8 @@
 			<th scope="col" class="p-3 w-25">Support</th>
 			<th scope="col" class="p-3 w-25">Date</th>
 			<th scope="col" class="p-3">Version</th>
-			<th scope="col" class="p-3 text-center"></th>
+			<th scope="col" class="text-right p-3">Modifier</th>
+            <th scope="col" class="text-right p-3">Supprimer</th>
 
 		</thead>
 
@@ -33,14 +34,10 @@
 				<td class="p-3"><?= $value['name']; ?></td>
 				<td class="p-3"><?= $value['date']; ?></td>
 				<td class="p-3"><?= $value['version']; ?></td>
-
-				<td class="text-right align-middle">
-					<div class="d-flex flex-lg-row justify-content-lg-around">
-						<div><a href="update-version.php?id=<?= $value['id_version']; ?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
-						<div><a href="delete-version.php?id=<?= $value['id_version']; ?>"><i class="delete fas fa-trash-alt" title="Supprimer"></i></a></div>
-					</div>
-				</td>
+				<td class="text-right align-middle"><a href="update-version.php?id=<?= $value['id_version']; ?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></td>
+				<td class="text-right align-middle"><a href="delete-version.php?id=<?= $value['id_version']; ?>"><i class="delete fas fa-trash-alt" title="Supprimer"></i></a></td>
 			</tr>
+
 			<?php endforeach; ?>
 		</tbody>
 	</table>

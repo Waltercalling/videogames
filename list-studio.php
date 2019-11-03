@@ -25,8 +25,9 @@
                         <th>Id</th>
                         <th scope="col" class="w-25">Nom</th>
                         <th scope="col" class="w-50">Lien</th>
-                        <th scope="col" class="">Supprimer</th>
-                        <th scope="col" class="">Modifier</th>
+                        <th scope="col" class="text-right p-3">Modifier</th>
+                        <th scope="col" class="text-right p-3">Supprimer</th>
+                        
                     
                     </tr>       
             </thead>
@@ -36,8 +37,8 @@
                         <td><?= $value->getId_studio(); ?></td>
                         <td><?= $value->getName(); ?></td>
                         <td><?= $value->getLink(); ?></td>
-                        <td><a href="deleteStudio.php?id=<?= $value->getId_studio();?>"><i class="delete fas fa-trash-alt" title="Supprimer"></i></a></td>
-                        <td><a class="" href="upgradeStudio.php?id=<?= $value->getId_studio();?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></td>
+                        <td class="text-right align-middle"><a href="upgradeStudio.php?id=<?= $value->getId_studio();?>"><i class="fas fa-edit" title="Modifier"></i></a></td>
+                        <td class="text-right align-middle"><a href="deleteStudio.php?id=<?= $value->getId_studio();?>"><i class="delete fas fa-trash-alt" title="Supprimer"></i></a></td>
                     </tr>
                         <?php endforeach;?>
             </tbody>

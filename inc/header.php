@@ -26,7 +26,7 @@
 	</head>
 <body>
 <header>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-black font-weight-bold p-3">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-black font-weight-bold p-3 pr-5">
 	  <a class="navbar-brand" href="index.php" title="Retour à l'accueil"><i class="fas fa-headset pr-4"></i>Jeux Vidéo</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>

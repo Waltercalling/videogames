@@ -47,7 +47,7 @@
 		//var_dump($category);
 		$manager->updateById($categorys);
 	}else{
-		echo'formulaire vide';
+		echo'';
 	}
 
 	?>

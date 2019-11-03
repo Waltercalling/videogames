@@ -24,7 +24,8 @@
 		<thead class="bg-dark text-white">
 			<th class="p-3">Id</th>
 			<th class="p-3 w-100">Support</th>
-			<th class="p-3 text-center"></th>
+			<th scope="col" class="text-right p-3">Modifier</th>
+            <th scope="col" class="text-right p-3">Supprimer</th>
 
 
 		</thead>
@@ -34,12 +35,8 @@
 			<tr>
 				<td class="p-3"><?= $value->getId_device(); ?></td>
 				<td class="p-3"><?= $value->getName(); ?></td>
-				<td class="text-right align-middle">
-					<div class="d-flex flex-lg-row justify-content-lg-around">
-						<div><a href="deviceUpdate.php?id=<?= $value->getId_device() ;?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></div>
-						<div><a class="delete" href="deviceDelete.php?id=<?= $value->getId_device();?>"><i class="fas fa-trash-alt" title="Supprimer"></i></a></div>
-					</div>
-				</td>
+				<td class="text-right align-middle"><a href="deviceUpdate.php?id=<?= $value->getId_device() ;?>"><i class="fas fa-edit pr-2" title="Modifier"></i></a></td>
+				<td class="text-right align-middle"><a class="delete" href="deviceDelete.php?id=<?= $value->getId_device();?>"><i class="fas fa-trash-alt" title="Supprimer"></i></a></td>
 			</tr>
 			<?php endforeach; ?>
 		</tbody>
