@@ -20,8 +20,9 @@
 	//$manager->del($devices[9]);
 
 	?>
-<table class="w-50 m-auto">
-		<thead class="bg-dark text-white">
+<section class="border border-dark m-auto w-50 rounded shadow bg-light">
+	<table class="table table-striped table-hover bg-light">
+		<thead class="thead-dark text-white font-weight-bold">
 			<th class="p-3">Id</th>
 			<th class="p-3 w-100">Support</th>
 			<th scope="col" class="text-right p-3">Modifier</th>
@@ -41,6 +42,7 @@
 			<?php endforeach; ?>
 		</tbody>
 	</table>
+</section>
 	<!-- Footer -->
 	<?php include("inc/footer.php"); ?>
 

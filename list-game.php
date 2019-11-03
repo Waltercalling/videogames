@@ -19,7 +19,7 @@
 
     ?>
     <section class="border border-dark w-75 m-auto rounded shadow">
-        <table class="m-auto table table-striped table-hover">
+        <table class="m-auto table table-striped table-hover bg-light">
             <thead class="thead-dark text-white font-weight-bold">
                 <th scope="col" class="p-3">Id_game</th>
                 <th scope="col" class="p-3 ">Titre</th>

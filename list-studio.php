@@ -6,12 +6,7 @@
         });
 
         require_once 'inc/header.php';
-
-        $bdd = new PDO('mysql:host=localhost;dbname=jvcom', 'root', '', [PDO::ATTR_EMULATE_PREPARES=>false]);
-
-        
-
-
+        require_once("inc/connect.php");
         $manager = new StudioManager($bdd);
         $tab_list = $manager->getShowItems();
 ?>
@@ -19,7 +14,7 @@
 
     <h1 class="text-center my-3">Liste des éditeurs</h1>
     <section class="border border-dark w-50 m-auto rounded shadow">
-        <table class="m-auto table table-striped table-hover">
+        <table class="m-auto table table-striped table-hover bg-light">
             <thead class="thead-dark text-white font-weight-bold">
                     <tr>
                         <th>Id</th>

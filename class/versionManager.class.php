@@ -63,4 +63,16 @@ public function getListVersion(){
 								INNER JOIN game ON version.id_game = game.id_game
 								INNER JOIN device ON version.id_device = device.id_device')->fetchAll(PDO::FETCH_ASSOC);
     }
+
+public function getAllDetails() {
+    $versions = $this->db->query('SELECT game.title AS titre, game.pegi, device.name AS plateforme, version.date, version.version, studio.name AS editeur, category.type AS style 
+                      FROM game 
+                      JOIN version ON game.id_game = version.id_game
+                      JOIN device ON version.id_device = device.id_device
+                      JOIN studio ON studio.id_studio = game.id_studio
+                      JOIN category ON category.id_category =  game.id_category
+                      ORDER BY title ASC;')->fetchAll(PDO::FETCH_ASSOC);
+    return $versions;
+  }   
+
 }
