@@ -25,7 +25,7 @@
 			
 		
 ?>
-		<input type="text" name="updName" class="form-control" placeholder="<?= $value->getName();?>" /> <?php } ?>
+		<input type="text" name="updName" class="form-control" value="<?= $value->getName();?>" /> <?php } ?>
 
 		<div class="row">
 			<!-- Cancel Button -->
@@ -45,6 +45,7 @@
 		$manager = new DeviceManager($bdd);
 		$devices = new Device (['name' => $_POST['updName']]);
 		$manager->updateById($devices);
+
 	}else{
 		echo'formulaire vide';
 	}
