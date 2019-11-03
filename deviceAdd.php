@@ -1,20 +1,23 @@
+<?php require_once("inc/header.php"); ?>
+<!-- Database connexion -->
+<?php require_once("inc/connect.php");?>
+
 <?php spl_autoload_register(function($class){
 	require_once'class/'.$class.'.class.php'; }); ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<!-- Head load -->
-<?php include("inc/head.php"); ?>
-<title>Ajouter une catégorie</title>
-</head>
-<!-- Database connexion -->
-<?php include_once("inc/connect.php");?>
-
-<body>
 	<!-- Header -->
-	<?php include("inc/header.php"); ?>
-	<main>
+	
+	
+	<?php
+	if (isset($_POST['supName']) && !empty($_POST['supName'])){
+		$manager = new DeviceManager($bdd);
+		$devices = new Device (['name' => $_POST['supName']]);
+		$manager->add($devices);
+		//$var = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'index.php';
+		header('location:device.php');
+	}
 
+	?>
 	<h1 class="text-center my-3">Ajouter un support</h1>
 
 <section class="w-50 m-auto">
@@ -37,20 +40,9 @@
 
 	</form>
 
-	<?php
-	if (isset($_POST['supName']) && !empty($_POST['supName'])){
-		$manager = new DeviceManager($bdd);
-		$devices = new Device (['name' => $_POST['supName']]);
-		$manager->add($devices);
-	}else{
-		echo'formulaire vide';
-	}
 
-	?>
 
 </section>
 	<!-- Footer -->
 	<?php include("inc/footer.php"); ?>
 
-</body>
-</html>

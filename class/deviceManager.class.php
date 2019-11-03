@@ -18,7 +18,6 @@
 			//closeCursor() libère la connexion au serveur, permettant aisni à d'autres requêtes SQL d'être exectuées
 			$add_device->closeCursor();
 			echo '<p>Device Added</p>';
-			header('location:device.php');
 
 		}
 
@@ -53,11 +52,28 @@
 		$this->_db->exec('DELETE FROM device WHERE id_device ='.$id); 
 		}
 
-			public function updateById($id){
-		$new_device = $this->_db->prepare('UPDATE device SET /*id_device = :id_device,*/ name = :name, WHERE id_device ='.$id);
+			public function updateById(Device $device){
+		$new_device = $this->_db->prepare('UPDATE device SET /*id_device = :id_device,*/ name = :name WHERE id_device ='.$_GET['id']);
+		//var_dump($device->getId_device());
+		var_dump($new_device);
 /*		$new_device->bindValue(':id_device', $device->getId_device(), PDO::PARAM_INT);
-*/		$new_device->bindValue(':name', $id->getName(), PDO::PARAM_STR);
+*/		$new_device->bindValue(':name', $device->getName(), PDO::PARAM_STR);
 		$new_device->execute();
 	
+		}
+
+			public function readObjById(){
+					$devices = [];
+					$read_object = $this->_db->query('SELECT * FROM device WHERE id_device='.$_GET['id']);
+					while ($obj = $read_object->fetch(PDO::FETCH_ASSOC)) {
+					    $devices[] = new Device($obj);
+
+					}
+					return $devices;
+				}
+
+	public function readById(){
+			$read_device = $this->_db->query('SELECT * FROM device WHERE id_device='.$_GET['id']);
+			return $read_device->fetch(PDO::FETCH_ASSOC);
 		}
 	}

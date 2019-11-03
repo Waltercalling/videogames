@@ -37,7 +37,7 @@ Class GameManager{
     // on récupère le connecteur à la base de donnée
         $db = $this->db;
         //VAR_DUMP($db);
-        $tabvar = $game->getTabListGame();
+        //$tabvar = $game->getTabListGame();
         // echo '<pre>';
         // print_r ($tabvar);
         // echo '</pre>';
@@ -79,17 +79,31 @@ Class GameManager{
     
         }
 
-    public function updateGame($game){
-        // on récupère le connecteur à la base de donnée
-        $db = $this->db;
+    public function updateGame($game, $id_jeu){
+         // on récupère le connecteur à la base de données
+         $db = $this->db;
+         $sql = "UPDATE game
+                  SET game.title ='".$game->getTitle()."' , game.description ='".$game->getDescription()."' , game.pegi =".$game->getPegi()." , game.link ='".$game->getLink()."' , game.id_category =".$game->getId_category()." , game.id_studio = ".$game->getId_studio()." WHERE id_game=".$id_jeu;
+             
+             echo $sql;
+             if (!empty($db)){
+             $req = $db->prepare($sql);
+             $req->execute();
     
         }
+    }
 
 
 
     public function getListGame(){
         $db = $this->db;
-        $sql = "SELECT game.id_game,game.title, game.description, game.pegi, game.link AS gamelink, game.id_category, category.type, game.id_studio,  studio.name, studio.link AS studiolink FROM game
+        //sauvegarde temporaire :
+        // $sql = "SELECT game.id_game,game.title, game.description, game.pegi, game.link AS gamelink, game.id_category, category.type, game.id_studio,  studio.name, studio.link AS studiolink FROM game
+        //         INNER JOIN category ON game.id_category = category.id_category
+        //         INNER JOIN studio ON game.id_studio = studio.id_studio";
+
+
+        $sql = "SELECT game.id_game,game.title, game.description, game.pegi, game.link AS gamelink,  category.type, studio.name, studio.link AS studiolink FROM game
                 INNER JOIN category ON game.id_category = category.id_category
                 INNER JOIN studio ON game.id_studio = studio.id_studio";
         // echo "<br/>".$sql;
@@ -101,17 +115,72 @@ Class GameManager{
             $games = $req->fetchAll(PDO::FETCH_ASSOC); 
             return $games;
         }
-
-        
-        
-
     }
 
-    public function deleteGame($game){
-        // on récupère le connecteur à la base de donnée
+    public function getObjectGame(){
+        // on récupère le connecteur à la base de données
         $db = $this->db;
+        $sql = "SELECT game.id_game,game.title, game.description, game.pegi, game.link AS gamelink, game.id_category, category.type, game.id_studio,  studio.name, studio.link AS studiolink 
+                FROM game
+                INNER JOIN category ON game.id_category = category.id_category
+                INNER JOIN studio ON game.id_studio = studio.id_studio";
+        // echo "<br/>".$sql;
+        
+        if (!empty($db)){
+            $req = $db->prepare($sql);
+            $req->execute();
+            $gameObject =[];
+            while ($data = $req->fetch(PDO::FETCH_ASSOC)){
+                $gameObject[] = new Game($data);
+                }
+            return $gameObject;
+        }
+
+        
         
 
     }
+
+
+    public function getTabById($id){
+        // on récupère le connecteur à la base de données
+        $db = $this->db;
+        $sql = "SELECT game.id_game,game.title, game.description, game.pegi, game.link, game.id_category, game.id_studio
+                FROM game
+                WHERE id_game=".$id;;
+        if (!empty($db)){
+            $req = $db->prepare($sql);
+            $req->execute();
+
+            $gameWithId = $req->fetch(PDO::FETCH_ASSOC);
+            return $gameWithId;
+        }
+    }
+
+
+    public function getObjectById($id){
+        // on récupère le connecteur à la base de données
+        $db = $this->db;
+        $sql = "SELECT game.id_game,game.title, game.description, game.pegi, game.link, game.id_category, game.id_studio
+                FROM game
+                WHERE id_game=".$id;;
+        if (!empty($db)){
+            $req = $db->prepare($sql);
+            $req->execute();
+
+            $gameWithId = [];
+            while ($data = $req->fetch(PDO::FETCH_ASSOC)){
+                $gameWithId[] = new Game($data);
+            }
+            return $gameWithId;
+        }
+    }
+
+    // Delete function 
+    public function deleteGame($idGame){
+	$del_Game = $this->db->exec('DELETE FROM game WHERE id_game ='.$idGame);
+	return $this;
+}
+
 }
     

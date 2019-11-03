@@ -4,7 +4,7 @@
 	include 'inc/connect.php';
 	$id=$_GET['id'];
 	
-		$manager = new categoryManager($bdd);
+		$manager = new versionManager($bdd);
 //		$devices = new Device (['name' => $_POST['supName']]);
-		$manager->deleteCategory($id);
-		header('location:list-category.php');
+		$manager->deleteVersion($id);
+		header('location:list-version.php');

@@ -1,19 +1,11 @@
 <?php spl_autoload_register(function($class){
 	require_once'class/'.$class.'.class.php'; }); ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<!-- Head load -->
-<?php include("inc/head.php"); ?>
-<title>Ajouter une catégorie</title>
-</head>
-<!-- Database connexion -->
+
 <?php include_once("inc/connect.php");?>
 
-<body>
 	<!-- Header -->
 	<?php include("inc/header.php"); ?>
-	<main>
 
 	<h1 class="text-center my-3">Modifier un support</h1>
 
@@ -25,10 +17,15 @@
 		<?php 		
 		$manager = new DeviceManager($bdd);
 		$id = $_GET['id'];
-	//	$devices = $manager->readObj();
+		$devices = $manager->readObj();
+		$oldname = $manager->readObjById();
 
+
+		foreach ($oldname as $key => $value) {
+			
+		
 ?>
-		<input type="text" name="updName" class="form-control" placeholder="[attends l'encien nom]" />
+		<input type="text" name="updName" class="form-control" placeholder="<?= $value->getName();?>" /> <?php } ?>
 
 		<div class="row">
 			<!-- Cancel Button -->
@@ -47,7 +44,7 @@
 	if (isset($_POST['updName']) && !empty($_POST['updName'])){
 		$manager = new DeviceManager($bdd);
 		$devices = new Device (['name' => $_POST['updName']]);
-		$manager->updateById($id);
+		$manager->updateById($devices);
 	}else{
 		echo'formulaire vide';
 	}
@@ -57,6 +54,3 @@
 </section>
 	<!-- Footer -->
 	<?php include("inc/footer.php"); ?>
-
-</body>
-</html>

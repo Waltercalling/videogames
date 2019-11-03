@@ -1,3 +1,30 @@
+<?php ob_start() ?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<!-- Head load -->
+	<head>
+		<meta charset="utf-8" />
+		<!-- <meta name="viewport" content="width=device-width" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Warning => write meta description --> 
+		<meta name="description" content="text-description" />
+		
+		<!-- Favicon must be create -->
+		<link rel="icon" href="media/favicon.ico" />
+		
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" href="css/bootstrap.css">
+			
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+		<!-- User CSS -->
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<title>jeux Vidéo</title>
+	</head>
+<body>
 <header>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-black font-weight-bold p-3">
 	  <a class="navbar-brand" href="index.php" title="Retour à l'accueil"><i class="fas fa-headset pr-4"></i>Jeux Vidéo</a>
@@ -10,10 +37,19 @@
 			<li class="nav-item active px-5">
 				<a class="nav-link" href="index.php" title="Retour à l'accueil"><i class="fas fa-home pr-3"></i>Accueil</a>
 			</li>
-
+			<!-- Menu Version -->
+			<li class="nav-item dropdown px-4">
+				<a class="nav-link dropdown-toggle" title="Menu des jeux" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Version
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" href="add-version.php"><i class="fas fa-caret-right pr-3"></i>Ajouter</a>
+				<a class="dropdown-item" href="list-version.php"><i class="fas fa-caret-right pr-3"></i>Liste</a>
+				</div>
+			</li>
 			<!-- Menu Game -->
 			<li class="nav-item dropdown px-4">
-				<a class="nav-link dropdown-toggle" title="Menu des jeux" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<a class="nav-link dropdown-toggle" title="Menu des jeux" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				Jeux
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -33,7 +69,7 @@
 
 	        <!-- Menu Device -->
 	       <li class="nav-item dropdown px-4">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" title="Menu des versions" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<a class="nav-link dropdown-toggle" href="" id="navbarDropdown" title="Menu des versions" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				Support
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -43,7 +79,7 @@
 	      </li>
 	      	<!-- Menu Studio -->
 			<li class="nav-item dropdown px-4">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" title="Menu des éditeurs" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<a class="nav-link dropdown-toggle" href="" id="navbarDropdown" title="Menu des éditeurs" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				Editeur
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -56,3 +92,5 @@
 	</nav>
 
 </header>
+
+	<main>

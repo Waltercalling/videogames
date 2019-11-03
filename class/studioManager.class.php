@@ -32,20 +32,36 @@ class StudioManager{
         $addStudio->bindValue(':link', $studio->getLink(), PDO::PARAM_STR);
         $addStudio->execute();
         $addStudio->closeCursor();
+        header('location: list-studio.php');
     }
 
     /**********************************CREATION DE LA FONCTION SUPPRIMER***** *********/
 
-    public function deleteStudio(Studio $studio){
-        $this->bdd->exec("DELETE FROM studio WHERE id_studio = ".$studio->getId_studio());
+    public function deleteStudio($studio){
+        $this->bdd->exec("DELETE FROM studio WHERE id_studio = ".$studio);
     }
 
 
-    public function getStudiobyId($id_studio){
-        $donnes = $this->bdd->exec("SELECT * FROM studio WHERE id_studio =" .$id_studio);
-        
-            }
+    public function updateStudio(Studio $studio){
+         $updateStudio = $this->bdd->prepare("UPDATE studio SET name = :name,
+                                            link = :link WHERE id_studio = ".$_GET['id']);
+        $updateStudio->bindValue(':name', $studio->getName(), PDO::PARAM_STR);
+        $updateStudio->bindValue(':link', $studio->getLink(), PDO::PARAM_STR);
+        $updateStudio->execute();
+        $updateStudio->closeCursor();
     }
+    
+
+
+    public function getStudioById(){
+        $studiosId = [];
+        $listStudio = $this->bdd->query("SELECT * FROM studio WHERE id_studio = ".$_GET['id']);
+        while($donnes = $listStudio->fetch(PDO::FETCH_ASSOC)){
+            $studiosId[] = new Studio($donnes);
+        };
+        return $studiosId;
+    }
+    } 
 
 
 ?>

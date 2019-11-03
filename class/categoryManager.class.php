@@ -18,6 +18,7 @@ public function addCategory(Category $category) {
 	  // Close cursor after category insert
 	  $add_category->closeCursor();
 	  echo '<p><strong><u>Catégorie bien ajoutée !!</u></strong></p>';
+	  header('Location:list-category.php');
 	}
 
 public function listCategory(){
@@ -25,8 +26,8 @@ public function listCategory(){
 }
 
 // Delete function 
-public function deleteCategory(Category $category){
-	$del_Category = $this->db->query('DELETE FROM category WHERE id_category ='.$category->getId_category());
+public function deleteCategory($id){
+	$del_Category = $this->db->exec('DELETE FROM category WHERE id_category ='.$id);
 	return $this;
 }
 
@@ -51,5 +52,29 @@ public function getObjCategory(){
     }
     return $categoryObjet;
   }
+
+
+
+  public function readObjById(){
+					$category = [];
+					$read_object = $this->db->query('SELECT * FROM category WHERE id_category='.$_GET['id']);
+					while ($obj = $read_object->fetch(PDO::FETCH_ASSOC)) {
+					    $category[] = new Category($obj);
+
+					}
+					return $category;
+				}
+
+public function updateById(Category $category){
+		$new_category = $this->db->prepare('UPDATE category SET /*id_category = :id_category,*/ type = :type WHERE id_category ='.$_GET['id']);
+		//var_dump($category->getId_category());
+
+
+/*		$new_category->bindValue(':id_category', $category->getId_category(), PDO::PARAM_INT);
+*/		$new_category->bindValue(':type', $category->getType(), PDO::PARAM_STR);
+		$new_category->execute();
+		header('Location:list-category.php');
+	
+		}
 
 }
