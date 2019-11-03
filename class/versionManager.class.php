@@ -40,7 +40,7 @@ public function updateVersionById(Version $version){
 
 		$new_version->bindValue(':date', $version->getDate(), PDO::PARAM_STR);
 		$new_version->bindValue(':version', $version->getVersion(), PDO::PARAM_STR);
-		$new_versiony->execute();
+		$new_version->execute();
 	
 		}
 

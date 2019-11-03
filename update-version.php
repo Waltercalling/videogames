@@ -11,19 +11,15 @@
 	<h1 class="text-center my-3">Ajouter une version</h1>
 
 <section class="w-50 m-auto">
-	<?php
-	if (isset($_POST['version']) && !empty($_POST['version'])){
+
+	<?php 
 		$manager = new VersionManager($bdd);
-		$addVersion = new Version(['date' => $_POST['versDate'], 'version' => $_POST['versNum']]);
 		$listVersion = $manager->updateListVersion();
-		var_dump($listVersion);
-		// $manager->updateVersionById($addVersion);
-	}
-	// else{
-	// 	echo'formulaire vide';
-	// }
+		// echo '<pre>';
+		// var_dump($listVersion);
 
 	?>
+
 	<form class="border border-dark rounded bg-light p-5" action="" method="POST">
 
 
@@ -46,6 +42,21 @@
 
 	</form>
 </section>
+
+	<?php
+	if (isset($_POST['versDate']) && !empty($_POST['versDate'])){
+		$manager = new VersionManager($bdd);
+		$addVersion = new Version(['date' => $_POST['versDate'], 'version' => $_POST['versNum']]);
+		$manager->updateVersionById($addVersion);
+		header('Location:list-version.php');
+		// var_dump($listVersion);
+		// $manager->updateVersionById($addVersion);
+	}
+	// else{
+	// 	echo'formulaire vide';
+	// }
+
+	?>
 
 	<!-- Footer -->
 	<?php include_once("inc/footer.php"); ?>

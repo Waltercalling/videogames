@@ -45,7 +45,7 @@
 		$manager = new categoryManager($bdd);
 		$categorys = new Category (['type' => $_POST['newCat']]);
 		//var_dump($category);
-		$manager->updateById($categorys);
+		$manager->updateVersionById($categorys);
 	}else{
 		echo'formulaire vide';
 	}
