@@ -17,20 +17,20 @@
 	<h1 class="text-center my-3">Ajouter un Jeu</h1>
 
     
-    <form class="border border-dark rounded bg-light p-5" action="" method="POST">
-        <label for="title">TITRE :</label>
+    <form class="border border-dark rounded bg-light p-5 w-75 m-auto" action="" method="POST">
+        <label for="title">Titre :</label>
         <input id='title' name='title' type="text" class="form-control"/>
         <br/>
 
-        <label for="description">DESCRIPTION</label>
+        <label for="description">Description :</label>
         <textarea id='description' name='description' class="form-control"></textarea>
         <br/>
 
-        <label for="pegi">PEGI</label>
+        <label for="pegi">Pegi :</label>
         <input id='pegi' name='pegi' type="number" class="form-control"/>
         <br/>
 
-        <label for="link">LIEN</label>
+        <label for="link">Lien :</label>
         <input id='link' name='link' type="text" class="form-control"/>
         <br/>
 
